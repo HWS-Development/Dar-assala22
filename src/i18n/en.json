@@ -1,0 +1,282 @@
+{
+  "home": {
+    "title": "Home",
+    "welcome": "Welcome"
+  },
+  "navbar": {
+    "accommodation": "ACCOMMODATION",
+    "dining": "DINING",
+    "exploringMedina": "EXPLORING MEDINA",
+    "meetingsEvents": "MEETINGS & EVENTS",
+    "offers": "OFFERS",
+    "experiences": "EXPERIENCES",
+    "gallery": "GALLERY",
+    "contact": "CONTACT",
+    "reserver": "Book a stay"
+  },
+  "hero": {
+    "hotelName": "Riad Alassala Fes",
+    "booking": {
+      "destination": "Destination",
+      "dates": "Arrival - Departure",
+      "voyageurs": "Travelers",
+      "guests": "2 guests, 1 room",
+      "reserver": "Book"
+    }
+  },
+  "rooms": {
+    "title": "Rooms & Suites",
+    "viewAll": "View all rooms",
+    "filters": {
+      "all": "All rooms",
+      "rooms": "Rooms",
+      "suites": "Suites",
+      "ryad": "Riad"
+    },
+    "cards": {
+      "superior": {
+        "title": "Superior Room",
+        "description": "Succumb to the Superior Room. On the ground floor, it offers direct access to the garden and the superb swimming pool. It communicates via the terrace with an adjoining room to accommodate your entire family."
+      },
+      "deluxe": {
+        "title": "Deluxe Room",
+        "description": "Located on an upper floor, the Deluxe Room, 46 m², overlooks the pool from its vast terrace. Very bright and spacious, it offers a large bathroom with shower and bathtub, open to the main room."
+      },
+      "juniorSuite": {
+        "title": "Junior Suite Deluxe",
+        "description": "Two bathrooms for more privacy, a spacious dressing room, a lounge area and a designer office space. Flooded with light from its large terrace, the Junior Suite Deluxe, 54m², ensures absolute comfort."
+      },
+      "suite": {
+        "title": "Suite",
+        "description": "Flows of light pass through the glass doors opening onto a double terrace. The living room with convertible sofa, the deckchairs facing the pool, the dressing room and the spacious bathroom invite family relaxation."
+      },
+      "suiteRyad": {
+        "title": "Riad Suite",
+        "description": "The Riad Suite has a separate living room with a sofa bed, a bathroom with shower and bathtub, a patio and a private rooftop terrace offering a panoramic view of the medina."
+      },
+      "suiteRoyale": {
+        "title": "Royal Suite",
+        "description": "A 60m² terrace, 2 bedrooms with their private bathroom and a 70m² living room with a convertible sofa lend themselves to unforgettable family moments."
+      },
+      "ryad3": {
+        "title": "Riad 3 bedrooms",
+        "description": "Combine the services of a luxury hotel with the intimacy of a private Riad. 3 bedrooms with bathroom, 2 living rooms, 2 terraces, a private pool, and the discreet service of a butler, this is what awaits you in this riad."
+      },
+      "ryad4": {
+        "title": "Riad 4 bedrooms",
+        "description": "Ideal for large families or stays with friends, this 250m² riad consists of 4 bedrooms and as many bathrooms, 2 living rooms and a vast 100m² terrace, home to a delightful private pool."
+      },
+      "ryad6": {
+        "title": "Riad 6 bedrooms",
+        "description": "A private pool on the edge of a huge 200m² terrace whose light floods 4 living rooms. 6 bedrooms and as many bathrooms and a fitted kitchen. Privacy is preserved in this 450m² riad."
+      }
+    },
+    "buttons": {
+      "decouvrir": "Discover",
+      "reserver": "Book"
+    }
+  },
+  "gallery": {
+    "title": "Gallery",
+    "viewAllPhotos": "View all photos"
+  },
+  "dining": {
+    "title": "DINING",
+    "description": "Authentic Moroccan cuisine in an elegant setting, from the patio fountain to the rooftop with panoramic views.",
+    "button": "Discover",
+    "viewAll": "See all restaurants & bars",
+    "wardya": {
+      "title": "Le Wardya",
+      "category": "RESTAURANT",
+      "tags": {
+        "0": "International and Moroccan cuisine",
+        "1": "Casual",
+        "2": "Pool view terrace"
+      },
+      "description": "In a dream setting by the pool, Le Wardya restaurant offers refined and flavorful Mediterranean cuisine."
+    },
+    "lounge": {
+      "title": "Pool Lounge",
+      "category": "RESTAURANT",
+      "tags": {
+        "0": "Snacking",
+        "1": "Cocktails",
+        "2": "Pool"
+      },
+      "description": "A friendly space to enjoy fresh cocktails and light cuisine throughout the day."
+    },
+    "bar": {
+      "title": "Le Bar",
+      "category": "BAR",
+      "tags": {
+        "0": "Signature cocktails",
+        "1": "Lounge atmosphere",
+        "2": "Terrace"
+      },
+      "description": "An elegant bar offering a selection of signature cocktails and fine wines in a refined atmosphere."
+    },
+    "terrace": {
+      "title": "Panoramic Terrace",
+      "category": "RESTAURANT",
+      "tags": {
+        "0": "Panoramic view",
+        "1": "Outdoor dining",
+        "2": "Romantic"
+      },
+      "description": "Enjoy a unique culinary experience on our terrace with stunning views of the gardens and medina."
+    },
+    "breakfast": {
+      "title": "Breakfast",
+      "category": "RESTAURANT",
+      "tags": {
+        "0": "Buffet",
+        "1": "Local products",
+        "2": "Garden view"
+      },
+      "description": "Start your day with a hearty breakfast featuring fresh local products in an elegant setting."
+    }
+  },
+  "experiences": {
+    "hero": {
+      "title": "Experiences",
+      "subtitle": "Discover authentic journeys, guided tours, cultural encounters and outdoor adventures from Riad Alassala."
+    },
+    "intro": {
+      "text": "From guided medina tours to day trips and multi-day adventures across Morocco, Riad Alassala offers authentic, safe and memorable experiences tailored to our guests. All trips are organized with trusted local partners and certified guides."
+    },
+    "sections": {
+      "excursions": {
+        "eyebrow": "EXCURSIONS",
+        "title": "Journeys Beyond the Medina",
+        "subtitle": "Discover Morocco through guided excursions, cultural sites and natural landscapes."
+      },
+      "workshops": {
+        "eyebrow": "LOCAL EXPERIENCES",
+        "title": "Artisanal & Culinary Experiences",
+        "subtitle": "Hands-on experiences that connect you with the craftsmanship and flavors of Fez."
+      }
+    },
+    "priceOnRequest": "Price on request",
+    "includes": "Includes",
+    "cta": "Details",
+    "experiences": {
+      "medinaTour": {
+        "title": "Guided Tour of Fez Medina",
+        "price": "€27 / person",
+        "description": "Discover the UNESCO-listed Fez medina with a certified guide. Visit historic monuments, artisan workshops, narrow souks and cultural sites.",
+        "includes": ["Guide", "Walking tour", "History & Culture"]
+      },
+      "chefchaouen": {
+        "title": "Day Trip to Chefchaouen",
+        "price": "€95 / person",
+        "description": "A day trip to Morocco's Blue Pearl. Explore the blue alleys, discover artisan shops, panoramic viewpoints and charming cafes.",
+        "includes": ["Private transport", "English-speaking driver"]
+      },
+      "meknesVolubilis": {
+        "title": "Excursion to Meknes, Moulay Idriss & Volubilis",
+        "price": "Price on request",
+        "description": "Visit the imperial city of Meknes, the sacred city of Moulay Idriss and the Roman ruins of Volubilis. A cultural journey through Morocco's rich history.",
+        "includes": ["Private car", "Driver", "Stops at all sites"]
+      },
+      "desertMerzouga": {
+        "title": "3-Day Desert Journey (Fez → Merzouga → Marrakech)",
+        "price": "Price on request",
+        "description": "A 3-day desert adventure including camel trekking, a starry night in the desert, traditional dinner, 4×4 transport, dunes, oases and breathtaking landscapes.",
+        "includes": ["Transport", "Camel ride", "Camp night", "Dinner & Breakfast"]
+      }
+    }
+  },
+  "contact": {
+    "hotelName": "Le Naoura",
+    "address": "Rue Djebel Alakhdar - Bab Doukkala 40000 Marrakech",
+    "reservations": "Reservations",
+    "phone": "+33 (0)9 70 82 11 10",
+    "itinerary": "Itinerary",
+    "mapLink": "https://www.google.com/maps/place/Riad+Alassala+Fes/@34.059835,-4.977492,17z/data=!4m21!1m11!3m10!1s0xd9ff4a9bae5a97d:0x79ad14c9dc151882!2sRiad+Alassala+Fes!5m2!4m1!1i2!8m2!3d34.0596204!4d-4.9781406!10e1!16s%2Fg%2F11fj1jfrr4!3m8!1s0xd9ff4a9bae5a97d:0x79ad14c9dc151882!5m2!4m1!1i2!8m2!3d34.0596204!4d-4.9781406!16s%2Fg%2F11fj1jfrr4?hl=en&entry=ttu&g_ep=EgoyMDI2MDExMy4wIKXMDSoASAFQAw%3D%3D",
+    "mapTitle": "Le Naoura Location Map"
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "tabs": {
+      "sejour": "Stay",
+      "restaurants": "Restaurants & Bars",
+      "bienetre": "Well-being",
+      "experiences": "Experiences"
+    },
+    "items": {
+      "sejour": [
+        {
+          "question": "Can I request a late checkout?",
+          "answer": "Yes, please contact reception to make the request, subject to availability. A supplement may apply depending on the desired departure time."
+        },
+        {
+          "question": "How to arrange a transfer to or from Marrakech-Ménara airport?",
+          "answer": "You can book a transfer through our concierge service. Contact us in advance to organize your transfer."
+        },
+        {
+          "question": "Does Hotel Le Naoura Marrakech offer a valet service?",
+          "answer": "Yes, we offer a valet service for your convenience."
+        },
+        {
+          "question": "Are pets allowed at Hotel Le Naoura?",
+          "answer": "Please contact us to learn about our pet policies."
+        },
+        {
+          "question": "Does the hotel provide baby cots or extra beds?",
+          "answer": "Yes, baby cots and extra beds are available upon request, subject to availability."
+        },
+        {
+          "question": "Does the hotel offer connecting or adjacent rooms?",
+          "answer": "Yes, we offer connecting and adjacent rooms. Please contact us for more information."
+        }
+      ],
+      "restaurants": [
+        {
+          "question": "Do restaurants require a reservation?",
+          "answer": "We strongly recommend booking in advance, especially for dinner."
+        },
+        {
+          "question": "Is there a dress code for restaurants?",
+          "answer": "Smart casual dress code is recommended."
+        }
+      ],
+      "bienetre": [
+        {
+          "question": "Is the spa open to non-residents?",
+          "answer": "Yes, the spa is open to residents and non-residents, by reservation."
+        },
+        {
+          "question": "What types of treatments are offered?",
+          "answer": "We offer a full range of wellness and relaxation treatments."
+        }
+      ],
+      "experiences": [
+        {
+          "question": "Is the medina safe to explore?",
+          "answer": "Yes, especially with a certified guide."
+        },
+        {
+          "question": "Are tours private?",
+          "answer": "Most experiences are private unless otherwise indicated."
+        },
+        {
+          "question": "Can we customize trips?",
+          "answer": "Yes, all excursions can be adapted according to guests' preferences."
+        }
+      ]
+    }
+  },
+  "social": {
+    "title": "Follow our news"
+  },
+  "footer": {
+    "copyright": "© 2026 RIAD ALASSALA",
+    "privacy": "PRIVACY",
+    "terms": "TERMS",
+    "contact": "CONTACT",
+    "developer": "DEVELOPED BY HWS AUTHENTIC MOROCCAN HOSPITALITY IN THE HEART OF FES"
+  },
+  "language": {
+    "switch": "Switch language"
+  }
+}
