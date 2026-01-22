@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 import { Menu, User, ChevronDown } from 'lucide-react';
 import clsx from 'clsx';
 
@@ -26,14 +27,14 @@ const Navbar = () => {
   };
 
   const navLinks = [
-    { key: 'accommodation', href: '#chambres' },
-    { key: 'dining', href: '#dining' },
-    { key: 'exploringMedina', href: '#experiences' },
-    { key: 'meetingsEvents', href: '#' },
-    { key: 'offers', href: '#' },
-    { key: 'experiences', href: '#experiences' },
-    { key: 'gallery', href: '#galerie' },
-    { key: 'contact', href: '#contact' },
+    { key: 'accommodation', href: '/accommodation', isRoute: true },
+    { key: 'dining', href: '/dining', isRoute: true },
+    { key: 'exploringMedina', href: '#experiences', isRoute: false },
+    { key: 'meetingsEvents', href: '/meetings-events', isRoute: true },
+    { key: 'offers', href: '#', isRoute: false },
+    { key: 'experiences', href: '/experiences', isRoute: true },
+    { key: 'gallery', href: '/gallery', isRoute: true },
+    { key: 'contact', href: '/contact', isRoute: true },
   ];
 
   return (
@@ -64,18 +65,16 @@ const Navbar = () => {
           </div>
 
           {/* Center: Logo */}
-          <div className="absolute left-1/2 -translate-x-1/2 flex items-center space-x-3">
-            {/* Golden B Logo */}
-            <div className="relative">
-              <span 
-                className="text-[#cda73c] text-4xl font-serif font-bold"
-                style={{ fontFamily: "Georgia, serif" }}
-              >
-                B
-              </span>
-              {/* Small star sparkle */}
-              <span className="absolute -bottom-1 left-1 text-[#cda73c] text-xs">✦</span>
-            </div>
+          <div className="absolute left-1/2 -translate-x-1/2 flex items-center space-x-3 z-10">
+            {/* Logo Image */}
+            <Link to="/" className="relative flex items-center">
+              <img 
+                src="/image/logo.png"
+                alt="Logo"
+                className="h-12 md:h-16 w-auto object-contain max-w-[200px]"
+                style={{ display: 'block' }}
+              />
+            </Link>
             {/* Logo Text */}
             <div className="hidden md:block">
               <div 
@@ -85,8 +84,7 @@ const Navbar = () => {
                 )}
                 style={{ fontFamily: "Jost, sans-serif" }}
               >
-                HÔTEL & RYADS BARRIERE
-              </div>
+BEYOND AND ABOVE              </div>
               <div 
                 className={clsx(
                   'text-base font-normal leading-tight transition-colors',
@@ -94,7 +92,7 @@ const Navbar = () => {
                 )}
                 style={{ fontFamily: "Jost, sans-serif" }}
               >
-                LE NAOURA
+               
               </div>
               <div 
                 className={clsx(
@@ -103,7 +101,6 @@ const Navbar = () => {
                 )}
                 style={{ fontFamily: "Jost, sans-serif" }}
               >
-                MARRAKECH
               </div>
             </div>
           </div>
@@ -171,24 +168,42 @@ const Navbar = () => {
           'hidden lg:flex items-center justify-center space-x-8 py-4 border-t transition-colors',
           isHovered ? 'border-black/20' : 'border-white/10'
         )}>
-          {navLinks.map((link) => (
-            <a
-              key={link.key}
-              href={link.href}
-              className={clsx(
-                'text-sm font-medium transition-colors relative group',
-                isHovered ? 'text-black' : 'text-white'
-              )}
-              style={{ fontFamily: "Jost, sans-serif" }}
-            >
-              {t(`navbar.${link.key}`)}
-              {/* Hover underline effect */}
-              <span className={clsx(
-                'absolute bottom-0 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full',
-                isHovered ? 'bg-black' : 'bg-[#cda73c]'
-              )}></span>
-            </a>
-          ))}
+          {navLinks.map((link) => {
+            const linkClassName = clsx(
+              'text-sm font-medium transition-colors relative group',
+              isHovered ? 'text-black' : 'text-white'
+            );
+            const underlineClassName = clsx(
+              'absolute bottom-0 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full',
+              isHovered ? 'bg-black' : 'bg-[#cda73c]'
+            );
+
+            if (link.isRoute) {
+              return (
+                <Link
+                  key={link.key}
+                  to={link.href}
+                  className={linkClassName}
+                  style={{ fontFamily: "Jost, sans-serif" }}
+                >
+                  {t(`navbar.${link.key}`)}
+                  <span className={underlineClassName}></span>
+                </Link>
+              );
+            }
+
+            return (
+              <a
+                key={link.key}
+                href={link.href}
+                className={linkClassName}
+                style={{ fontFamily: "Jost, sans-serif" }}
+              >
+                {t(`navbar.${link.key}`)}
+                <span className={underlineClassName}></span>
+              </a>
+            );
+          })}
         </div>
 
         {/* Mobile Menu */}
@@ -198,20 +213,38 @@ const Navbar = () => {
             isHovered ? 'border-black/20' : 'border-white/20'
           )}>
             <div className="flex flex-col space-y-3 pt-4">
-              {navLinks.map((link) => (
-                <a
-                  key={link.key}
-                  href={link.href}
-                  className={clsx(
-                    'text-sm font-medium transition-colors',
-                    isHovered ? 'text-black' : 'text-white'
-                  )}
-                  style={{ fontFamily: "Jost, sans-serif" }}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {t(`navbar.${link.key}`)}
-                </a>
-              ))}
+              {navLinks.map((link) => {
+                const linkClassName = clsx(
+                  'text-sm font-medium transition-colors',
+                  isHovered ? 'text-black' : 'text-white'
+                );
+
+                if (link.isRoute) {
+                  return (
+                    <Link
+                      key={link.key}
+                      to={link.href}
+                      className={linkClassName}
+                      style={{ fontFamily: "Jost, sans-serif" }}
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      {t(`navbar.${link.key}`)}
+                    </Link>
+                  );
+                }
+
+                return (
+                  <a
+                    key={link.key}
+                    href={link.href}
+                    className={linkClassName}
+                    style={{ fontFamily: "Jost, sans-serif" }}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {t(`navbar.${link.key}`)}
+                  </a>
+                );
+              })}
             </div>
           </div>
         )}

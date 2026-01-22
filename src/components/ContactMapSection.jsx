@@ -87,7 +87,9 @@ const ContactMapSection = () => {
         </div>
       </div>
     </section>
+
   );
+  
 };
 
 export default ContactMapSection;

@@ -37,3 +37,27 @@
 .rooms-swiper {
   padding-bottom: 40px;
 }
+
+/* Accommodation Room Cards Swiper Pagination */
+.accommodation-room-swiper .swiper-pagination {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.accommodation-room-swiper .swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 1;
+  margin: 0 4px;
+  transition: all 0.3s ease;
+}
+
+.accommodation-room-swiper .swiper-pagination-bullet-active {
+  background: white;
+  width: 8px;
+  height: 8px;
+}

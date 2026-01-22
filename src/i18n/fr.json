@@ -21,7 +21,15 @@
       "dates": "Arrivée - Départ",
       "voyageurs": "Voyageurs",
       "guests": "2 invités, 1 chambre",
-      "reserver": "Réserver"
+      "reserver": "Réserver",
+      "destinations": {
+        "accommodation": "Hébergement",
+        "dining": "Restauration",
+        "experiences": "Expériences",
+        "meetingsEvents": "Réunions & Événements",
+        "gallery": "Galerie",
+        "contact": "Contact"
+      }
     }
   },
   "rooms": {
@@ -78,13 +86,122 @@
   },
   "gallery": {
     "title": "Galerie",
-    "viewAllPhotos": "Voir toutes les photos"
+    "viewAllPhotos": "Voir toutes les photos",
+    "hero": {
+      "title": "Galerie",
+      "subtitle": "Découvrez l'atmosphère du Riad Alassala à travers des photos sélectionnées et des ambiances jour et nuit."
+    },
+    "breadcrumbs": {
+      "home": "Accueil",
+      "gallery": "Galerie"
+    },
+    "photos": {
+      "eyebrow": "PHOTOS"
+    },
+    "videos": {
+      "eyebrow": "VIDÉOS"
+    },
+    "ambiance": {
+      "eyebrow": "AMBIANCES JOUR & NUIT",
+      "day": {
+        "title": "Ambiance Jour",
+        "description": "Cours ensoleillées, détails traditionnels et couleurs chaudes révélant l'architecture du riad."
+      },
+      "night": {
+        "title": "Ambiance Nuit",
+        "description": "Une atmosphère intime et paisible avec des lanternes et un éclairage doux."
+      }
+    }
   },
   "dining": {
     "title": "DINING",
     "description": "Cuisine marocaine authentique dans un cadre élégant, du patio avec fontaine au toit-terrasse avec vue panoramique.",
     "button": "Découvrir",
     "viewAll": "Voir tous les restaurants & bars",
+    "hero": {
+      "title": "Restauration",
+      "subtitle": "Cuisine marocaine authentique dans un cadre élégant, du patio avec fontaine au toit-terrasse avec vue panoramique."
+    },
+    "intro": {
+      "eyebrow": "RESTAURATION / RESTAURANT & ROOFTOP",
+      "title": "Restaurants & Bars au Naoura, Marrakech",
+      "subtitle": "Cuisine marocaine authentique dans un cadre élégant, du patio avec fontaine au toit-terrasse avec vue panoramique.",
+      "description": "Découvrez l'alliance subtile entre la cuisine traditionnelle française et la gastronomie marocaine. Un brunch riche en saveurs s'offre à vous au Wardye certains dimanches. Dans un cadre enchanteur inspiré du désert, le Nuphar Bar propose une sélection de vins et cocktails délicieux. Pour tous...",
+      "seeMore": "Voir plus"
+    },
+    "breadcrumbs": {
+      "home": "Accueil",
+      "dining": "Restauration"
+    },
+    "sections": {
+      "ourCuisine": {
+        "title": "Notre Cuisine",
+        "text": "Au Riad Alassala Fes, chaque repas est une célébration de la cuisine marocaine authentique. L'héritage fassi, les saveurs locales et une atmosphère raffinée se conjuguent pour créer une expérience inoubliable, sous les ciels étoilés de Fès ou au bord de la fontaine murmurante."
+      },
+      "leVerdoyant": {
+        "title": "Le Verdoyant",
+        "subheading": "Saveurs Authentiques et Raffinées",
+        "text": "Le menu du Le Verdoyant célèbre l'excellence de la cuisine marocaine. Chaque plat, confectionné avec des ingrédients frais, de saison et d'origine locale, réinterprète créativement les recettes fassies traditionnelles. Les saveurs s'entremêlent, les textures surprennent et les couleurs enchantent, offrant un véritable voyage culinaire où authenticité et modernité se rencontrent à chaque bouchée."
+      },
+      "fountain": {
+        "title": "La Fontaine, Cœur de l'Expérience",
+        "text": "Au cœur du patio du riad, la fontaine centrale du Le Verdoyant accompagne doucement chaque repas de son murmure apaisant. Entourée de verdure luxuriante et de détails artisanaux marocains, elle transforme le patio en un sanctuaire intime et serein. Chaque table devient un refuge où les invités peuvent savourer pleinement la richesse des plats dans un cadre intemporel et élégant."
+      },
+      "rooftop": {
+        "title": "Expérience Rooftop",
+        "subheading": "Vues à Couper le Souffle",
+        "text": "Perché au sommet du Riad Alassala Fes, le rooftop offre des vues panoramiques sur l'ancienne ville et les montagnes de l'Atlas. À La Table Panoramique et Fez From Above, chaque repas devient un voyage : cuisine marocaine authentique préparée avec des ingrédients frais et de saison, cocktails signature, thé marocain et délices locaux, le tout dans une ambiance rooftop raffinée où gastronomie et panorama s'harmonisent."
+      },
+      "breakfast": {
+        "title": "Petit-déjeuner — Un Matin au Cœur de Fès",
+        "text": "Chaque matin, votre séjour comprend un petit-déjeuner servi à table dans le cadre de notre offre B&B. Savourez-le dans le patio, près de la fontaine, baigné d'une lumière douce. Pains et pâtisseries frais, msemmen feuilletés, crêpes marocaines, confitures artisanales et miel, fruits de saison, jus fraîchement pressés, et thés et cafés aromatiques infusés d'épices locales. Un moment chaleureux et sensoriel où tradition et confort se rencontrent."
+      }
+    },
+    "presentation": {
+      "title": "Notre Cuisine",
+      "description": "Au Riad Alassala Fes, chaque repas est une célébration de la cuisine marocaine authentique. L'héritage fassi, les saveurs locales et une atmosphère raffinée se conjuguent pour créer une expérience inoubliable, sous les ciels étoilés de Fès ou au bord de la fontaine murmurante."
+    },
+    "concept": {
+      "title": "Philosophie Culinaire",
+      "description": "Nous croyons en une cuisine simple et généreuse inspirée des recettes locales. Chaque plat est préparé avec des ingrédients frais provenant des marchés locaux et confectionné avec attention à l'authenticité."
+    },
+    "rooftop": {
+      "title": "Expérience Rooftop",
+      "description": "Profitez du petit-déjeuner, du déjeuner ou du dîner sur notre terrasse rooftop avec vue panoramique sur l'ancienne médina. Un cadre paisible pour des moments mémorables."
+    },
+    "breakfastPage": {
+      "title": "Petit-déjeuner",
+      "description": "Commencez votre journée avec un petit-déjeuner fait maison comprenant du pain frais, des pâtisseries, des fruits de saison, des spécialités marocaines et des boissons chaudes préparées sur commande."
+    },
+    "menu": {
+      "title": "Menu (PDF)",
+      "description": "Découvrez nos plats faits maison inspirés de la tradition marocaine et préparés quotidiennement avec des produits frais.",
+      "downloadButton": "Télécharger le Menu"
+    },
+    "restaurants": {
+      "leVerdoyant": {
+        "name": "Le Verdoyant",
+        "category": "RESTAURANT",
+        "tags": ["Cuisine internationale et marocaine", "Décontracté", "Terrasse vue piscine"],
+        "description": "Dans un décor de rêve aux abords de la piscine, le restaurant Le Verdoyant propose une cuisine méditerranéenne raffinée et savoureuse."
+      },
+      "nupharBar": {
+        "name": "Nuphar Bar",
+        "category": "BAR",
+        "tags": ["Bar à cocktails", "Nocturne", "Terrasse vue piscine"],
+        "description": "Le Nuphar Bar met à votre disposition divers alcools qui vont du bon vin au meilleur champagne dans un cadre enchanteur."
+      },
+      "brunch": {
+        "name": "Brunch dans une Oasis",
+        "category": "RESTAURANT",
+        "tags": ["Brunch", "Décontracté", "Terrasse vue piscine"],
+        "description": "Un brunch riche en saveurs s'offre à vous au Wardya quelques dimanches."
+      }
+    },
+    "roomService": {
+      "title": "Offre de restauration en chambre",
+      "description": "Dégustez le meilleur de la gastronomie du Riad Alassala Fes dans l'intimité de votre chambre, suite ou ryad privé. Notre service de restauration en chambre est disponible 24h/24 et propose une sélection de mets locavores, méditerranéens et de saison, par le Chef Hamza Alquir."
+    },
     "wardya": {
       "title": "Le Wardya",
       "category": "RESTAURANT",
@@ -139,10 +256,14 @@
   "experiences": {
     "hero": {
       "title": "Expériences",
-      "subtitle": "Découvrez des voyages authentiques, visites guidées, rencontres culturelles et aventures en plein air depuis Riad Alassala."
+      "subtitle": "Découvrez des voyages authentiques, visites guidées, rencontres culturelles et aventures en plein air à partir de Riad Alassala."
     },
     "intro": {
-      "text": "Des visites guidées de la médina aux excursions d'une journée et aux aventures de plusieurs jours à travers le Maroc, Riad Alassala propose des expériences authentiques, sûres et mémorables adaptées à nos invités. Tous les voyages sont organisés avec des partenaires locaux de confiance et des guides certifiés."
+      "text": "Des visites guidées de la médina aux excursions d'une journée complète et aux aventures de plusieurs jours à travers le Maroc, Riad Alassala propose des expériences authentiques, sûres et mémorables adaptées à nos invités. Tous les voyages sont organisés avec des partenaires locaux de confiance et des guides certifiés."
+    },
+    "breadcrumbs": {
+      "home": "Accueil",
+      "experiences": "Expériences"
     },
     "sections": {
       "excursions": {
@@ -164,26 +285,83 @@
         "title": "Visite Guidée de la Médina de Fès",
         "price": "27 € / personne",
         "description": "Découvrez la médina de Fès classée au patrimoine de l'UNESCO avec un guide certifié. Visitez des monuments historiques, des ateliers artisanaux, des souks étroits et des sites culturels.",
-        "includes": ["Guide", "Visite à pied", "Histoire & Culture"]
+        "includes": ["Guide", "Visite à pied", "Histoire & Culture"],
+        "category": "excursions"
       },
       "chefchaouen": {
         "title": "Excursion d'une Journée à Chefchaouen",
         "price": "95 € / personne",
-        "description": "Une escapade d'une journée vers la Perle Bleue du Maroc. Parcourez les ruelles bleues, découvrez des boutiques d'artisans, des points de vue panoramiques et des cafés charmants.",
-        "includes": ["Transport privé", "Chauffeur anglophone"]
+        "description": "Une escapade d'une journée complète vers la Perle Bleue du Maroc. Parcourez les ruelles bleues, découvrez des boutiques d'artisans, des points de vue panoramiques et des cafés charmants.",
+        "includes": ["Transport privé", "Chauffeur anglophone"],
+        "category": "excursions"
       },
       "meknesVolubilis": {
         "title": "Excursion à Meknès, Moulay Idriss & Volubilis",
-        "price": "Prix sur demande",
+        "price": null,
         "description": "Visitez la ville impériale de Meknès, la ville sacrée de Moulay Idriss et les ruines romaines de Volubilis. Un voyage culturel dans la riche histoire du Maroc.",
-        "includes": ["Voiture privée", "Chauffeur", "Arrêts sur tous les sites"]
+        "includes": ["Voiture privée", "Chauffeur", "Arrêts sur tous les sites"],
+        "category": "excursions"
       },
       "desertMerzouga": {
         "title": "Voyage de 3 Jours dans le Désert (Fès → Merzouga → Marrakech)",
-        "price": "Prix sur demande",
+        "price": null,
         "description": "Une aventure de 3 jours dans le désert comprenant une randonnée à dos de chameau, une nuit étoilée dans le désert, un dîner traditionnel, un transport 4×4, des dunes, des oasis et des paysages époustouflants.",
-        "includes": ["Transport", "Balade à dos de chameau", "Nuit au camp", "Dîner & Petit-déjeuner"]
+        "includes": ["Transport", "Balade à dos de chameau", "Nuit au camp", "Dîner & Petit-déjeuner"],
+        "category": "excursions"
+      },
+      "middleAtlas": {
+        "title": "Voyage de Randonnée Fès & Moyen Atlas",
+        "price": null,
+        "description": "Une aventure de randonnée de plusieurs jours à travers les forêts de cèdres, les villages berbères, les vallées montagneuses et les sources naturelles autour du Moyen Atlas.",
+        "includes": ["Transport", "Repas", "Hébergements", "Guide"],
+        "category": "excursions"
+      },
+      "chefchaouenTrekking": {
+        "title": "Voyage de Randonnée Fès & Chefchaouen",
+        "price": null,
+        "description": "Une belle route de randonnée combinant les paysages montagneux avec le charme de Chefchaouen.",
+        "includes": ["Randonnée", "Guide", "Repas", "Hébergements"],
+        "category": "excursions"
+      },
+      "cookingClass": {
+        "title": "Cours de Cuisine & Pâtisserie",
+        "price": null,
+        "description": "Un cours de cuisine marocaine pratique comprenant la visite du marché, des recettes traditionnelles, la cuisson du pain et le déjeuner.",
+        "includes": ["Session de cuisine", "Ingrédients", "Déjeuner"],
+        "category": "workshops"
+      },
+      "tasteOfFes": {
+        "title": "Cours de Cuisine – Découvrez le Patrimoine Culinaire Marocain",
+        "price": "450 MAD par personne",
+        "description": "Le Goût de Fès — Plongez dans les saveurs riches de la cuisine marocaine avec un cours pratique de 3 heures. Commencez votre voyage au marché local, en sélectionnant des ingrédients frais avec votre hôte tout en apprenant quelques phrases arabes en cours de route. De retour au riad, apprenez les secrets des épices, techniques et saveurs marocaines en préparant un plat fassi authentique. Une expérience culinaire unique à chérir pour toujours. Menu d'exemple : Salades marocaines, Pastilla & Briouates, Tagines, Couscous",
+        "includes": ["Eau en bouteille", "Déjeuner", "Thé ou Café"],
+        "category": "workshops"
+      },
+      "moroccanTeaChallenge": {
+        "title": "Défi du Thé Marocain",
+        "price": "150 MAD par personne",
+        "description": "Plongez dans le monde du thé marocain avec nos conseils d'experts. Maîtrisez l'art de préparer la théière parfaite et savourez-la accompagnée d'une sélection d'exquises pâtisseries marocaines faites maison.",
+        "includes": ["Eau en bouteille", "Thé ou Café", "Sélection de pâtisseries marocaines"],
+        "category": "workshops"
+      },
+      "artOfMoroccanPastry": {
+        "title": "L'Art de la Pâtisserie Marocaine",
+        "price": "300 MAD par personne",
+        "description": "Découvrez les secrets de la pâtisserie marocaine dans un atelier d'une demi-journée avec notre pâtissier passionné. Apprenez à créer des Briouates, Kaab Ghzal, Ghriba et autres délices traditionnels tout en explorant l'art et la culture derrière chaque création.",
+        "includes": ["Eau en bouteille", "Thé ou Café", "Sélection de pâtisseries marocaines"],
+        "category": "workshops"
+      },
+      "artisanWorkshops": {
+        "title": "Ateliers Artisanaux – L'Âme de Fès entre Vos Mains",
+        "price": null,
+        "description": "Entrez dans le cœur de Fès et découvrez les métiers intemporels de la ville. Guidés par des maîtres artisans, chaque atelier vous invite à vous connecter avec des siècles de patrimoine marocain, explorant des techniques transmises de génération en génération : Zellige & Art de la Céramique — concevez et créez votre propre mosaïque, une miniature de Fès à chérir. Poterie & Céramique — façonnez, peignez et donnez vie à l'argile en utilisant des méthodes fassies authentiques. Calligraphie — dansez avec l'élégance de l'écriture arabe, capturant la poésie du mot écrit. Chaque expérience est plus qu'un atelier — c'est un voyage pour les sens, une connexion intime avec l'artisanat, et un souvenir qui incarne l'essence de Fès.",
+        "includes": ["Session d'atelier", "Matériaux", "Création à emporter"],
+        "category": "workshops"
       }
+    },
+    "contact": {
+      "title": "Souhaitez-vous réserver une expérience ou personnaliser votre voyage ?",
+      "button": "Contactez-nous"
     }
   },
   "contact": {
@@ -193,7 +371,45 @@
     "phone": "+212 (0)6 61 90 00 00",
     "itinerary": "Itinéraire",
     "mapLink": "https://www.google.com/maps/place/Riad+Alassala+Fes/@34.059835,-4.977492,17z/data=!4m21!1m11!3m10!1s0xd9ff4a9bae5a97d:0x79ad14c9dc151882!2sRiad+Alassala+Fes!5m2!4m1!1i2!8m2!3d34.0596204!4d-4.9781406!10e1!16s%2Fg%2F11fj1jfrr4!3m8!1s0xd9ff4a9bae5a97d:0x79ad14c9dc151882!5m2!4m1!1i2!8m2!3d34.0596204!4d-4.9781406!16s%2Fg%2F11fj1jfrr4?hl=en&entry=ttu&g_ep=EgoyMDI2MDExMy4wIKXMDSoASAFQAw%3D%3D",
-    "mapTitle": "Carte de localisation Riad Alassala Fes"
+    "mapTitle": "Carte de localisation Riad Alassala Fes",
+    "page": {
+      "hero": {
+        "title": "Contact",
+        "subtitle": "Contactez-nous"
+      },
+      "form": {
+        "title": "ENVOYEZ-NOUS UN MESSAGE",
+        "subtitle": "Nous vous répondrons dans les plus brefs délais",
+        "name": "NOM",
+        "email": "EMAIL",
+        "phone": "TÉLÉPHONE",
+        "subject": "SUJET",
+        "message": "MESSAGE",
+        "sendButton": "ENVOYER LE MESSAGE"
+      },
+      "info": {
+        "title": "INFORMATIONS DE CONTACT",
+        "address": {
+          "label": "ADRESSE",
+          "value": "Médina, Fès, Maroc"
+        },
+        "phone": {
+          "label": "TÉLÉPHONE",
+          "value": "+212 XXX XXX XXX"
+        },
+        "whatsapp": {
+          "label": "WHATSAPP",
+          "value": "+212 XXX XXX XXX"
+        },
+        "email": {
+          "label": "EMAIL",
+          "value": "contact@riadalassala.com"
+        },
+        "followUs": {
+          "label": "SUIVEZ-NOUS"
+        }
+      }
+    }
   },
   "faq": {
     "title": "Questions Fréquentes",
@@ -278,5 +494,184 @@
   },
   "language": {
     "switch": "Changer la langue"
+  },
+  "accommodation": {
+    "hero": {
+      "title": "Hébergement",
+      "subtitle": "Chambres et suites conçues pour offrir confort, authenticité et l'atmosphère calme d'une maison marocaine traditionnelle."
+    },
+    "section": {
+      "eyebrow": "Séjournez avec nous",
+      "title": "Suites & Chambres",
+      "subtitle": "Trouvez la chambre parfaite pour votre séjour, chacune offrant un mélange de détails artisanaux et d'équipements modernes.",
+      "description": "Les chambres, suites et ryads du Riad Alassala offrent tranquillité, proximité de la médina, spaciosité (minimum 46m²), grandes terrasses, vues sur la piscine, et décoration par Pascal Desp.",
+      "seeMore": "Voir plus"
+    },
+    "breadcrumbs": {
+      "home": "Accueil",
+      "accommodation": "Hébergement"
+    },
+    "filters": {
+      "all": "Toutes les chambres",
+      "suites": "Suites",
+      "rooms": "Chambres",
+      "ryad": "Ryad"
+    },
+    "rooms": {
+      "superior": {
+        "name": "Chambre Dar Supérieure",
+        "category": "CHAMBRES",
+        "description": "Une chambre confortable avec décoration traditionnelle, tons doux et tous les équipements essentiels pour un séjour relaxant.",
+        "features": "2 personnes | 46 m² | King Size | Vue piscine"
+      },
+      "patio": {
+        "name": "Suite Patio",
+        "category": "SUITES",
+        "description": "Une suite spacieuse avec coin salon et vue sur la cour, offrant intimité et confort.",
+        "features": "2 personnes | 50 m² | King Size | Vue cour"
+      },
+      "rooftop": {
+        "name": "Suite Terrasse Rooftop",
+        "category": "SUITES",
+        "description": "Une suite avec accès au toit-terrasse, parfaite pour profiter de la ligne d'horizon de la médina au lever ou au coucher du soleil.",
+        "features": "2 personnes | 55 m² | King Size | Terrasse rooftop"
+      },
+      "grand": {
+        "name": "Grande Maison Médina",
+        "category": "RYAD",
+        "description": "Une résidence multi-pièces idéale pour les familles ou les longs séjours, avec salon, salle à manger et accès terrasse privée.",
+        "features": "6 personnes | 200 m² | Plusieurs chambres | Terrasse privée"
+      },
+      "standardDoubleRoom": {
+        "name": "Chambre Double Standard",
+        "category": "CHAMBRES",
+        "description": "Une chambre double lumineuse avec touches marocaines, literie confortable et équipements modernes.",
+        "features": "2 personnes | 30 m² | Lit double | Salle de bain privée"
+      },
+      "standardDoubleRoom2": {
+        "name": "Chambre Double Standard (2)",
+        "category": "CHAMBRES",
+        "description": "Une deuxième option de chambre double avec détails artisanaux et atmosphère calme.",
+        "features": "2 personnes | 30 m² | Lit double | Vue médina"
+      },
+      "juniorSuiteS2": {
+        "name": "Suite Junior (S2)",
+        "category": "SUITES",
+        "description": "Une suite spacieuse avec petit coin salon et carrelage traditionnel.",
+        "features": "3 personnes | 50 m² | Lit King | Coin salon"
+      },
+      "juniorSuiteS1": {
+        "name": "Suite Junior (S1)",
+        "category": "SUITES",
+        "description": "Une suite alliant artisanat marocain et confort, parfaite pour les longs séjours.",
+        "features": "3 personnes | 55 m² | Lit King | Espace de vie"
+      },
+      "juniorSuite2mez": {
+        "name": "Suite Junior (2Mez)",
+        "category": "SUITES",
+        "description": "Une suite à deux niveaux avec chambre style mezzanine et coin salon en dessous.",
+        "features": "3 personnes | 60 m² | Deux niveaux | Mezzanine"
+      },
+      "executiveSuite": {
+        "name": "Suite Exécutive",
+        "category": "SUITES",
+        "description": "Une grande suite avec mobilier haut de gamme, salon séparé et accès terrasse privée.",
+        "features": "4 personnes | 80 m² | Lit King | Salon"
+      },
+      "duplex": {
+        "name": "Duplex",
+        "category": "RYAD",
+        "description": "Une résidence sur deux étages conçue pour les familles ou groupes, avec plusieurs chambres et salon.",
+        "features": "6 personnes | 150 m² | Plusieurs chambres | Salon privé"
+      },
+      "budgetSingleRoom": {
+        "name": "Chambre Simple Économique",
+        "category": "CHAMBRES",
+        "description": "Une chambre simple et confortable idéale pour les voyageurs solo recherchant un séjour calme dans la médina.",
+        "features": "1 personne | 20 m² | Lit simple | Salle de bain privée"
+      },
+      "budgetSingleRoom2": {
+        "name": "Chambre Simple Économique (2)",
+        "category": "CHAMBRES",
+        "description": "Une chambre simple supplémentaire offrant confort essentiel et authenticité.",
+        "features": "1 personne | 20 m² | Lit simple"
+      },
+      "upToGuests": "Jusqu'à 3 invités",
+      "breakfastIncluded": "Petit-déjeuner inclus",
+      "viewDetails": "Voir les détails",
+      "checkRates": "Réserver",
+      "book": "RÉSERVER",
+      "details": "DÉTAILS"
+    }
+  },
+  "meetingsEvents": {
+    "hero": {
+      "title": "Réunions & Événements",
+      "subtitle": "Organisez vos rassemblements dans un cadre marocain authentique alliant intimité, élégance et hospitalité chaleureuse."
+    },
+    "breadcrumbs": {
+      "home": "Accueil",
+      "meetingsEvents": "Réunions & Événements"
+    },
+    "featured": {
+      "title": "Un Cadre Exceptionnel",
+      "description": "Le Riad Alassala peut être privatisé pour des célébrations, événements familiaux, dîners ou petites réunions professionnelles. Notre rooftop, salons et patios offrent des espaces polyvalents adaptés à vos besoins.",
+      "cta1": "Demander un Devis",
+      "cta2": "En Savoir Plus"
+    },
+    "services": {
+      "eyebrow": "Services & Équipements",
+      "items": {
+        "left": [
+          "Privatisation du riad",
+          "Dîners privés",
+          "Événements rooftop"
+        ],
+        "right": [
+          "Séminaires & ateliers",
+          "Coordination d'événements",
+          "Assistance personnalisée"
+        ]
+      }
+    },
+    "eventTypes": {
+      "eyebrow": "Types d'Événements",
+      "privatisation": {
+        "title": "Privatisation du Riad",
+        "description": "Utilisation exclusive du riad pour des événements intimes, célébrations ou séjours en groupe.",
+        "discover": "Découvrir",
+        "details": "Détails"
+      },
+      "rooftop": {
+        "title": "Événements Rooftop",
+        "description": "Idéal pour les shootings photo, dîners, petites cérémonies ou réceptions cocktail avec vues sur la médina.",
+        "discover": "Découvrir",
+        "details": "Détails"
+      },
+      "diners": {
+        "title": "Dîners Privés",
+        "description": "Une expérience culinaire sur mesure dans nos salons ou terrasses, parfaite pour les occasions spéciales.",
+        "discover": "Découvrir",
+        "details": "Détails"
+      }
+    },
+    "spaces": {
+      "eyebrow": "Espaces Disponibles",
+      "seminars": {
+        "title": "Séminaires & Ateliers",
+        "description": "Un cadre calme idéal pour les petites réunions, formations ou sessions de brainstorming.",
+        "discover": "Découvrir"
+      },
+      "services": {
+        "title": "Services Proposés",
+        "description": "Décoration, restauration, coordination et organisation sur mesure pour répondre à vos besoins événementiels.",
+        "discover": "Découvrir"
+      }
+    },
+    "groupOffer": {
+      "eyebrow": "Offre Groupe",
+      "description": "Le Riad Alassala propose des espaces confortables adaptés aux séjours en groupe, réunions et événements privés.",
+      "discover": "Découvrir"
+    }
   }
 }
