@@ -43,8 +43,8 @@ const DiningPageSection = () => {
         {/* Main Title */}
         <div className="text-center mb-8">
           <h1
-            className="text-5xl font-serif text-[#1a1a1a] mb-6"
-            style={{ fontFamily: "Georgia, serif" }}
+            className="text-[40px] text-[#1a1a1a] mb-6"
+            style={{ fontFamily: "Jost, sans-serif" }}
           >
             {t("dining.intro.title")}
           </h1>
