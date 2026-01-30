@@ -71,7 +71,7 @@ const Navbar = () => {
               <img 
                 src="/image/logo.png"
                 alt="Logo"
-                className="h-12 md:h-16 w-auto object-contain max-w-[200px]"
+                className="h-12 md:h-20 w-auto object-contain max-w-[200px]"
                 style={{ display: 'block' }}
               />
             </Link>
@@ -83,8 +83,7 @@ const Navbar = () => {
                   isHovered ? 'text-black' : 'text-white'
                 )}
                 style={{ fontFamily: "Jost, sans-serif" }}
-              >
-BEYOND AND ABOVE              </div>
+              >          </div>
               <div 
                 className={clsx(
                   'text-base font-normal leading-tight transition-colors',
@@ -165,7 +164,7 @@ BEYOND AND ABOVE              </div>
 
         {/* Bottom Navigation Bar */}
         <div className={clsx(
-          'hidden lg:flex items-center justify-center space-x-8 py-4 border-t transition-colors',
+          'hidden lg:flex items-center justify-center space-x-8 py-4  transition-colors',
           isHovered ? 'border-black/20' : 'border-white/10'
         )}>
           {navLinks.map((link) => {

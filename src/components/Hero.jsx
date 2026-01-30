@@ -30,7 +30,7 @@ const Hero = () => {
   }, [location.pathname, t]);
 
   return (
-    <section className="relative h-screen w-full overflow-hidden">
+    <section className="relative h-[80vh] w-full overflow-hidden">
       {/* Background Image/Video Placeholder */}
       <div className="absolute inset-0 bg-gradient-to-b from-gray-900/40 to-gray-900/60">
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=1920&h=1080&fit=crop')] bg-cover bg-center" />
@@ -39,7 +39,7 @@ const Hero = () => {
       {/* Content Overlay */}
       <div className="relative z-10 h-full flex flex-col items-center justify-center text-white">
         {/* Page Title / Hotel Name */}
-        <h1 className="text-6xl md:text-8xl font-light mb-4 tracking-wide">
+        <h1 className="text-4xl md:text-6xl font-light mb-4 tracking-wide">
           {pageTitle}
         </h1>
 
@@ -48,14 +48,14 @@ const Hero = () => {
           {[...Array(5)].map((_, i) => (
             <Star
               key={i}
-              className="w-6 h-6 fill-yellow-400 text-yellow-400"
+              className="w-6 h-6 fill-white "
             />
           ))}
         </div>
       </div>
 
       {/* Booking Bar Overlay - Floating at Bottom Center */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 w-full max-w-6xl px-4">
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 w-full max-w-4xl px-4">
         <div className="bg-white rounded-lg shadow-lg py-6 px-6">
           <div className="flex flex-col md:flex-row items-center gap-4">
             {/* Destination */}

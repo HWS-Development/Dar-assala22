@@ -47,6 +47,7 @@ const ContactPageSection = () => {
             >
               {t('contact.page.form.subtitle')}
             </p>
+           
           </div>
 
           {/* Form */}
@@ -122,6 +123,7 @@ const ContactPageSection = () => {
                 />
               </div>
             </div>
+          
 
             {/* Row 3: Message */}
             <div>
@@ -152,6 +154,7 @@ const ContactPageSection = () => {
               </button>
             </div>
           </form>
+          
         </div>
       </section>
 

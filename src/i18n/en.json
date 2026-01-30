@@ -4,14 +4,14 @@
     "welcome": "Welcome"
   },
   "navbar": {
-    "accommodation": "ACCOMMODATION",
+    "accommodation": "Accommodations",
     "dining": "DINING",
     "exploringMedina": "EXPLORING MEDINA",
-    "meetingsEvents": "MEETINGS & EVENTS",
-    "offers": "OFFERS",
-    "experiences": "EXPERIENCES",
-    "gallery": "GALLERY",
-    "contact": "CONTACT",
+    "meetingsEvents": "Meetings & Events",
+    "offers": "Offers",
+    "experiences": "Experiences",
+    "gallery": "Gallery",
+    "contact": "Contact",
     "reserver": "Book a stay"
   },
   "hero": {
@@ -372,6 +372,8 @@
     "itinerary": "Itinerary",
     "mapLink": "https://www.google.com/maps/place/Riad+Alassala+Fes/@34.059835,-4.977492,17z/data=!4m21!1m11!3m10!1s0xd9ff4a9bae5a97d:0x79ad14c9dc151882!2sRiad+Alassala+Fes!5m2!4m1!1i2!8m2!3d34.0596204!4d-4.9781406!10e1!16s%2Fg%2F11fj1jfrr4!3m8!1s0xd9ff4a9bae5a97d:0x79ad14c9dc151882!5m2!4m1!1i2!8m2!3d34.0596204!4d-4.9781406!16s%2Fg%2F11fj1jfrr4?hl=en&entry=ttu&g_ep=EgoyMDI2MDExMy4wIKXMDSoASAFQAw%3D%3D",
     "mapTitle": "Le Naoura Location Map",
+    "whatsappLink": "https://wa.me/212661900000",
+    "whatsappLabel": "Contact us on WhatsApp",
     "page": {
       "hero": {
         "title": "Contact",
@@ -399,7 +401,8 @@
         },
         "whatsapp": {
           "label": "WHATSAPP",
-          "value": "+212 XXX XXX XXX"
+          "value": "+212 XXX XXX XXX",
+          "url": "https://wa.me/212661900000"
         },
         "email": {
           "label": "EMAIL",
