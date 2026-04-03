@@ -4,7 +4,11 @@ export default {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+      mainBg: "var(--static-background-base-main)",
+      }
+    ,},
   },
   plugins: [],
 };

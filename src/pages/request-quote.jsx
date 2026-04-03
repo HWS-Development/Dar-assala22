@@ -1,15 +1,15 @@
 import Navbar from '../components/Navbar';
-import ExperiencesPageSection from '../components/ExperiencesPageSection';
+import RequestQuotePageSection from '../components/RequestQuotePageSection';
 import Footer from '../components/Footer';
 
-const Experiences = () => {
+const RequestQuote = () => {
   return (
     <div className="min-h-screen pt-20">
       <Navbar />
-      <ExperiencesPageSection />
+      <RequestQuotePageSection />
       <Footer />
     </div>
   );
 };
 
-export default Experiences;
+export default RequestQuote;

@@ -20,9 +20,11 @@
   },
   "dependencies": {
     "clsx": "^2.1.1",
+    "date-fns": "^4.1.0",
     "i18next": "^25.7.4",
     "lucide-react": "^0.562.0",
     "react": "^19.2.3",
+    "react-date-range": "^2.0.1",
     "react-dom": "^19.2.3",
     "react-i18next": "^16.5.3",
     "react-router-dom": "^7.12.0",

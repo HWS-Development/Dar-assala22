@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { ChevronRight, ChevronLeft } from "lucide-react";
+import accommodationData from "../data/accommodationData";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
-import clsx from "clsx";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -12,347 +13,176 @@ import "swiper/css/pagination";
 
 const AccommodationSection = () => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
   const [activeFilter, setActiveFilter] = useState("all");
-
-  // Room data with 4 images each for slider
-  const rooms = [
-    {
-      id: "superior",
-      key: "superior",
-      category: "rooms",
-      images: [
-        "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=1200",
-        "https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=1200",
-        "https://images.unsplash.com/photo-1590490360182-c33d57733427?w=1200",
-        "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=1200",
-      ],
-    },
-    {
-      id: "patio",
-      key: "patio",
-      category: "suites",
-      images: [
-        "https://images.unsplash.com/photo-1590490360182-c33d57733427?w=1200",
-        "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=1200",
-        "https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=1200",
-        "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=1200",
-      ],
-    },
-    {
-      id: "rooftop",
-      key: "rooftop",
-      category: "suites",
-      images: [
-        "https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=1200",
-        "https://images.unsplash.com/photo-1590490360182-c33d57733427?w=1200",
-        "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=1200",
-        "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=1200",
-      ],
-    },
-    {
-      id: "grand",
-      key: "grand",
-      category: "ryad",
-      images: [
-        "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=1200",
-        "https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=1200",
-        "https://images.unsplash.com/photo-1590490360182-c33d57733427?w=1200",
-        "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=1200",
-      ],
-    },
-    {
-      id: "standardDoubleRoom",
-      key: "standardDoubleRoom",
-      category: "rooms",
-      images: [
-        "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=1200",
-        "https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=1200",
-        "https://images.unsplash.com/photo-1590490360182-c33d57733427?w=1200",
-        "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=1200",
-      ],
-    },
-    {
-      id: "standardDoubleRoom2",
-      key: "standardDoubleRoom2",
-      category: "rooms",
-      images: [
-        "https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=1200",
-        "https://images.unsplash.com/photo-1590490360182-c33d57733427?w=1200",
-        "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=1200",
-        "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=1200",
-      ],
-    },
-    {
-      id: "juniorSuiteS2",
-      key: "juniorSuiteS2",
-      category: "suites",
-      images: [
-        "https://images.unsplash.com/photo-1590490360182-c33d57733427?w=1200",
-        "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=1200",
-        "https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=1200",
-        "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=1200",
-      ],
-    },
-    {
-      id: "juniorSuiteS1",
-      key: "juniorSuiteS1",
-      category: "suites",
-      images: [
-        "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=1200",
-        "https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=1200",
-        "https://images.unsplash.com/photo-1590490360182-c33d57733427?w=1200",
-        "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=1200",
-      ],
-    },
-    {
-      id: "juniorSuite2mez",
-      key: "juniorSuite2mez",
-      category: "suites",
-      images: [
-        "https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=1200",
-        "https://images.unsplash.com/photo-1590490360182-c33d57733427?w=1200",
-        "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=1200",
-        "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=1200",
-      ],
-    },
-    {
-      id: "executiveSuite",
-      key: "executiveSuite",
-      category: "suites",
-      images: [
-        "https://images.unsplash.com/photo-1590490360182-c33d57733427?w=1200",
-        "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=1200",
-        "https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=1200",
-        "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=1200",
-      ],
-    },
-    {
-      id: "duplex",
-      key: "duplex",
-      category: "ryad",
-      images: [
-        "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=1200",
-        "https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=1200",
-        "https://images.unsplash.com/photo-1590490360182-c33d57733427?w=1200",
-        "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=1200",
-      ],
-    },
-    {
-      id: "budgetSingleRoom",
-      key: "budgetSingleRoom",
-      category: "rooms",
-      images: [
-        "https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=1200",
-        "https://images.unsplash.com/photo-1590490360182-c33d57733427?w=1200",
-        "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=1200",
-        "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=1200",
-      ],
-    },
-    {
-      id: "budgetSingleRoom2",
-      key: "budgetSingleRoom2",
-      category: "rooms",
-      images: [
-        "https://images.unsplash.com/photo-1590490360182-c33d57733427?w=1200",
-        "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=1200",
-        "https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=1200",
-        "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=1200",
-      ],
-    },
-  ];
 
   const filters = [
     { id: "all", key: "all" },
     { id: "suites", key: "suites" },
     { id: "rooms", key: "rooms" },
-    { id: "ryad", key: "ryad" },
   ];
 
   const filteredRooms =
     activeFilter === "all"
-      ? rooms
-      : rooms.filter((r) => r.category === activeFilter);
+      ? accommodationData
+      : accommodationData.filter((r) => r.category === activeFilter);
 
   return (
-    <section className="bg-white py-16">
-      <div className="max-w-[1300px] mx-auto px-6">
-        {/* Breadcrumbs */}
-        <div className="mb-8">
-          <nav className="flex items-center gap-2 text-sm text-[#666]" style={{ fontFamily: "Jost, sans-serif" }}>
-            <Link to="/" className="hover:text-[#1a1a1a] transition-colors">
-              {t("accommodation.breadcrumbs.home")}
-            </Link>
-            <ChevronRight size={14} className="text-[#999]" />
+    <section className="bg-mainBg py-16">
+      <div className="max-w-[1200px] mx-auto px-6">
+
+        {/* Breadcrumb */}
+        <div className="mt-6 md:mt-8 mb-6 md:mb-8">
+          <nav className="flex items-center gap-2 text-sm text-[#666]">
+            <Link to="/"  className="hover:text-[#1a1a1a]">{t("accommodation.breadcrumbs.home")}</Link>
+            <ChevronRight size={14} />
             <span className="text-[#1a1a1a]">{t("accommodation.breadcrumbs.accommodation")}</span>
           </nav>
         </div>
 
-        {/* Main Title */}
-        <div className="text-center mb-8">
-          <h1
-            className="text-[40px] text-[#1a1a1a] mb-6"
-            style={{ fontFamily: "Jost, sans-serif" }}
-          >
+        {/* Title */}
+        <div className="text-center max-w-3xl mx-auto py-12 md:py-16 lg:py-20">
+          <h1 className="title-xl mb-6">
             {t("accommodation.section.title")}
           </h1>
-
-          {/* Description */}
-          <p
-            className="text-base text-[#666] max-w-4xl mx-auto mb-4 leading-relaxed"
-            style={{ fontFamily: "Jost, sans-serif" }}
-          >
+          <p className="text-[#555] mb-4 leading-relaxed">
             {t("accommodation.section.description")}
-            <a
-              href="#"
-              className="text-[#1a1a1a] hover:underline ml-1"
-              style={{ fontFamily: "Jost, sans-serif" }}
-            >
-              {t("accommodation.section.seeMore")}
-            </a>
           </p>
         </div>
 
-        {/* Filter Tabs */}
-        <div className="flex justify-center gap-3 mb-12">
+        {/* Filters */}
+        <div className="flex justify-center gap-3 mb-12 flex-wrap">
           {filters.map((f) => (
             <button
               key={f.id}
               onClick={() => setActiveFilter(f.id)}
-              className={clsx(
-                "px-6 py-2 rounded border text-sm transition",
+              className={`px-5 py-2 text-sm border rounded cursor-pointer ${
                 activeFilter === f.id
-                  ? "bg-transparent text-[#1a1a1a] border-[#1a1a1a]"
-                  : "bg-transparent text-[#666] border-[#e0dcd6] hover:border-[#1a1a1a] hover:text-[#1a1a1a]"
-              )}
-              style={{ fontFamily: "Jost, sans-serif" }}
+                  ? "border-black text-black"
+                  : "border-gray-300 text-gray-500"
+              }`}
             >
               {t(`accommodation.filters.${f.key}`)}
             </button>
           ))}
         </div>
 
-        {/* Room Cards Grid - 2 columns */}
-        <RoomCardGrid rooms={filteredRooms} t={t} />
+        {/* GRID */}
+        <div className="grid md:grid-cols-2 gap-10 items-stretch">
+          {filteredRooms.map((room) => (
+            <RoomCard key={room.id} room={room} t={t} navigate={navigate} />
+          ))}
+        </div>
+
       </div>
     </section>
   );
 };
 
-// Separate component for room card to handle state
-const RoomCard = ({ room, t }) => {
-  const roomData = t(`accommodation.rooms.${room.key}`, { returnObjects: true });
-  const [swiperInstance, setSwiperInstance] = useState(null);
+
+// ================= CARD =================
+const RoomCard = ({ room, t, navigate }) => {
+  const prevRef = useRef(null);
+  const nextRef = useRef(null);
+
+  const roomData = t(`accommodation.rooms.${room.key}`, {
+    returnObjects: true,
+  });
 
   return (
-    <div className="bg-white border border-[#e0dcd6] rounded-lg overflow-hidden">
-      {/* Image Container with Swiper Slider */}
-      <div className="relative h-[400px] w-full overflow-hidden group">
+    <div className="h-full flex flex-col group">
+
+      {/* ===== SLIDER ===== */}
+      <div className="relative overflow-hidden">
+
         <Swiper
           modules={[Navigation, Pagination]}
-          navigation={{
-            nextEl: `.swiper-button-next-${room.id}`,
-            prevEl: `.swiper-button-prev-${room.id}`,
+          loop
+          pagination={{ clickable: true }}
+          onSwiper={(swiper) => {
+            setTimeout(() => {
+              if (swiper.params.navigation) {
+                swiper.params.navigation.prevEl = prevRef.current;
+                swiper.params.navigation.nextEl = nextRef.current;
+
+                swiper.navigation.destroy();
+                swiper.navigation.init();
+                swiper.navigation.update();
+              }
+            });
           }}
-          pagination={{
-            clickable: true,
-            el: `.swiper-pagination-${room.id}`,
-          }}
-          loop={true}
-          onSwiper={setSwiperInstance}
-          className="h-full w-full accommodation-room-swiper"
+          className="w-full aspect-[574/383]"
         >
-          {room.images.map((image, index) => (
-            <SwiperSlide key={index}>
+          {room.images.map((img, i) => (
+            <SwiperSlide key={i}>
               <img
-                src={image}
-                alt={`${roomData.name} - Image ${index + 1}`}
+                src={img}
+                alt={roomData.name}
                 className="w-full h-full object-cover"
               />
             </SwiperSlide>
           ))}
         </Swiper>
 
-        {/* Custom Navigation Buttons */}
+        {/* ARROWS */}
         <button
-          className={`swiper-button-prev-${room.id} absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white p-2 rounded-full shadow-lg transition-all opacity-0 group-hover:opacity-100`}
-          aria-label="Previous image"
+          ref={prevRef}
+          className="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-white/80 p-2 rounded-full shadow opacity-0 group-hover:opacity-100 transition"
         >
-          <ChevronLeft className="w-5 h-5 text-[#1a1a1a]" />
-        </button>
-        <button
-          className={`swiper-button-next-${room.id} absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white p-2 rounded-full shadow-lg transition-all opacity-0 group-hover:opacity-100`}
-          aria-label="Next image"
-        >
-          <ChevronRight className="w-5 h-5 text-[#1a1a1a]" />
+          <ChevronLeft size={18} />
         </button>
 
-        {/* Pagination Dots Overlay */}
-        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-10">
-          <div className={`swiper-pagination swiper-pagination-${room.id}`}></div>
-        </div>
+        <button
+          ref={nextRef}
+          className="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-white/80 p-2 rounded-full shadow opacity-0 group-hover:opacity-100 transition"
+        >
+          <ChevronRight size={18} />
+        </button>
+
       </div>
 
-      {/* Card Content */}
-      <div className="p-6">
-        {/* Category Label */}
-        <p
-          className="text-xs uppercase tracking-wider text-[#666] mb-2"
-          style={{ fontFamily: "Jost, sans-serif" }}
-        >
+      {/* ===== CONTENT ===== */}
+      <div className="flex flex-col flex-1 mt-4">
+
+        <p className="text-xs uppercase text-gray-500 mb-1">
           {roomData.category}
         </p>
 
-        {/* Room Name */}
-        <h3
-          className="text-2xl font-serif text-[#1a1a1a] mb-3"
-          style={{ fontFamily: "Georgia, serif" }}
-        >
+        <h3 className="text-lg font-medium mb-1">
           {roomData.name}
         </h3>
 
-        {/* Features */}
-        <p
-          className="text-sm text-[#666] mb-4"
-          style={{ fontFamily: "Jost, sans-serif" }}
-        >
-          {roomData.features}
+        <p className="text-[#1B1B1A] mb-4 leading-relaxed">
+          {roomData.features.join(" • ")}
         </p>
 
-        {/* Description */}
-        <p
-          className="text-sm text-[#555] mb-6 leading-relaxed"
-          style={{ fontFamily: "Jost, sans-serif" }}
-        >
+        <p className="text-sm text-gray-600 mb-4">
           {roomData.description}
         </p>
 
-        {/* Action Buttons */}
-        <div className="flex gap-3">
+        {/* ===== BUTTONS ALIGNÉS ===== */}
+        <div className="flex gap-3 mt-auto">
+
           <button
-            className="flex-1 border border-[#1a1a1a] bg-white text-[#1a1a1a] py-3 rounded hover:bg-[#f5f5f5] transition-colors"
-            style={{ fontFamily: "Jost, sans-serif" }}
+            onClick={() => navigate(`/rooms/${room.id}`)}
+            className="flex-1 border border-black py-2 text-sm hover:bg-black hover:text-white transition cursor-pointer"
           >
             {t("accommodation.rooms.details")}
           </button>
-          <button
-            className="flex-1 bg-[#1a1a1a] text-white py-3 rounded hover:bg-[#262626] transition-colors"
-            style={{ fontFamily: "Jost, sans-serif" }}
+
+          <a
+            href="https://riad-alassala-fes.hotelrunner.com/bv3/search"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex-1 bg-black border text-white py-2 text-sm text-center  transition-all duration-300 hover:shadow-md hover:bg-[#F1EEEA] hover:text-black hover:bg-[#F1EEEA] hover:border-black"
           >
             {t("accommodation.rooms.book")}
-          </button>
-        </div>
-      </div>
-    </div>
-  );
-};
+          </a>
 
-// Grid component
-const RoomCardGrid = ({ rooms, t }) => {
-  return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-      {rooms.map((room) => (
-        <RoomCard key={room.id} room={room} t={t} />
-      ))}
+        </div>
+
+      </div>
+
     </div>
   );
 };

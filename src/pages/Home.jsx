@@ -13,13 +13,14 @@ const Home = () => {
     <div className="min-h-screen">
       <Navbar />
       <Hero />
-      <ChambresSuitesSection />
-      
+
+      <ChambresSuitesSection />     
       <DiningSection />
       <ExperiencesSection />
       <ContactMapSection />
       <GallerySection />
       <FAQSection />
+      
       <SocialMediaSection />
       <Footer />
     </div>

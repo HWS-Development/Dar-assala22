@@ -7,11 +7,11 @@ const SocialMediaSection = () => {
   // Instagram feed images - using placeholder images for now
   // These can be replaced with actual Instagram feed images via API
   const instagramImages = [
-    "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=400&h=400&fit=crop",
-    "https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=400&h=400&fit=crop",
-    "https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=400&h=400&fit=crop",
-    "https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=400&h=400&fit=crop",
-    "https://images.unsplash.com/photo-1590490360182-c33d57733427?w=400&h=400&fit=crop",
+    "https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/Riad%20Al%20Assala%20Fes/Instagram/in1%20(1).jpg",
+    "https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/Riad%20Al%20Assala%20Fes/Instagram/in2.jpg",
+    "https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/Riad%20Al%20Assala%20Fes/Instagram/in3.jpg",
+    "https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/Riad%20Al%20Assala%20Fes/Instagram/in4.jpg",
+    "https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/Riad%20Al%20Assala%20Fes/Instagram/in5.jpg",
   ];
 
   return (
@@ -31,12 +31,12 @@ const SocialMediaSection = () => {
           {instagramImages.map((image, index) => (
             <div
               key={index}
-              className="relative aspect-square rounded-lg overflow-hidden group cursor-pointer"
+              className="relative aspect-square rounded-lg overflow-hidden group "
             >
               <img
                 src={image}
                 alt={`Instagram post ${index + 1}`}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
              
             </div>

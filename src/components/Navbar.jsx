@@ -21,6 +21,10 @@ const Navbar = () => {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, [isLanguageOpen]);
 
+  useEffect(() => {
+  document.body.style.overflow = isMobileMenuOpen ? "hidden" : "auto";
+  }, [isMobileMenuOpen]);
+
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
     setIsLanguageOpen(false);
@@ -29,7 +33,7 @@ const Navbar = () => {
   const navLinks = [
     { key: 'accommodation', href: '/accommodation', isRoute: true },
     { key: 'dining', href: '/dining', isRoute: true },
-    { key: 'exploringMedina', href: '#experiences', isRoute: false },
+    { key: 'exploringMedina', href: '/exploring-medina', isRoute: true },
     { key: 'meetingsEvents', href: '/meetings-events', isRoute: true },
     { key: 'offers', href: '#', isRoute: false },
     { key: 'experiences', href: '/experiences', isRoute: true },
@@ -42,10 +46,10 @@ const Navbar = () => {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       className={clsx(
-        'relative z-50 transition-all duration-300',
+        'absolute top-0 left-0 w-full z-50 transition-all duration-300',
         isHovered
           ? 'bg-white'
-          : 'bg-gradient-to-r from-gray-900 via-gray-800 to-black'
+          : 'bg-[#1B1B1A]/80 border-b border-white/10'
       )}
     >
       <div className="max-w-[1920px] mx-auto px-6">
@@ -69,7 +73,7 @@ const Navbar = () => {
             {/* Logo Image */}
             <Link to="/" className="relative flex items-center">
               <img 
-                src="/image/logo.png"
+                src="https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/Riad%20Al%20Assala%20Fes/Logo/logo.png"
                 alt="Logo"
                 className="h-12 md:h-20 w-auto object-contain max-w-[200px]"
                 style={{ display: 'block' }}
@@ -107,17 +111,20 @@ const Navbar = () => {
           {/* Right: Reservation Button, User Icon, Language Selector */}
           <div className="flex items-center space-x-4">
             {/* Reservation Button */}
-            <button 
+            <a
+              href="https://riad-alassala-fes.hotelrunner.com/bv3/search"
+              target="_blank"
+              rel="noopener noreferrer"
               className={clsx(
-                'border px-4 py-2 text-sm transition-colors',
+                'hidden lg:inline-block border px-4 py-2 text-sm transition-colors cursor-pointer',
                 isHovered
-                  ? 'border-black text-black hover:bg-black/10'
+                  ? 'border-black text-black hover:bg-black hover:text-white'
                   : 'border-white text-white hover:bg-white/10'
               )}
               style={{ fontFamily: "Jost, sans-serif" }}
             >
               {t('navbar.reserver')}
-            </button>
+            </a>
 
             {/* User Icon */}
             <button className={clsx(
@@ -244,6 +251,25 @@ const Navbar = () => {
                   </a>
                 );
               })}
+              
+              {/* ✅ Reservation Button */}
+              <a
+                  href="https://riad-alassala-fes.hotelrunner.com/bv3/search"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                 className={clsx(
+                    "block text-center py-3 mt-4 transition",
+                    isHovered
+                      ? "border border-black text-black hover:bg-black hover:text-white"
+                      : "border border-white text-white hover:bg-white/10"
+                  )}
+                  style={{ fontFamily: "Jost, sans-serif" }}
+                >
+                  {t('navbar.reserver')}
+              </a>
+
+
+
             </div>
           </div>
         )}

@@ -1,127 +1,194 @@
-import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useLocation } from 'react-router-dom';
-import { Star, Calendar, Users, MapPin } from 'lucide-react';
+import { useLocation, Link } from 'react-router-dom';
+import { Star } from 'lucide-react';
+import BOOKINGBAR from '../components/BookingBar';
+import accommodationData from '../data/accommodationData';
+import experiencesHeroImages from "../data/experiencesHeroImages";
 
 const Hero = () => {
   const { t } = useTranslation();
   const location = useLocation();
 
-  // Get page title based on current route
-  const pageTitle = useMemo(() => {
-    const path = location.pathname;
-    
-    switch (path) {
-      case '/accommodation':
-        return t('accommodation.hero.title');
-      case '/dining':
-        return t('dining.hero.title');
-      case '/experiences':
-        return t('experiences.hero.title');
-      case '/meetings-events':
-        return t('meetingsEvents.hero.title');
-      case '/gallery':
-        return t('gallery.hero.title');
-      case '/contact':
-        return t('contact.page.hero.title');
-      default:
-        return t('hero.hotelName'); // Default to hotel name on home page
-    }
-  }, [location.pathname, t]);
+  // 🔹 Base config 
+  const BASE_CONFIG = {
+    height: 'min-h-[60vh] md:h-[70vh]',
+    showTitle: false,
+    showBookingBar: false,
+  };
 
+  // 🔹 Pages config
+  const CONFIG = {
+    '/accommodation': {
+      bg: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1920&h=1080&fit=crop',
+    },
+    '/dining/leVerdoyant': {
+      bg: 'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/Riad%20Al%20Assala%20Fes/Images%20of%20the%20pages/Restaurant/_DSC1982-HDR.png',
+      cta: {
+        label: t('leVerdoyant.cta'),
+        link: '#',
+      },
+    },
+    '/dining/LeVerdoyantRooftop': {
+      bg: 'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/Riad%20Al%20Assala%20Fes/Images%20of%20the%20pages/Restaurant/_DSC1997-HDR.png',
+      cta: {
+        label: t('leVerdoyantRooftop.cta'),
+        link: '#',
+      },
+    },
+    '/dining/LeVerdoyantCoffeeShop': {
+      bg: 'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/Riad%20Al%20Assala%20Fes/Images%20of%20the%20pages/Restaurant/Riad%20Alassala%20Fes%20-%20hotel%20photoshoot%20in%20morocco%204.jpg',
+      cta: {
+        label: t('leVerdoyantCoffeeShop.cta'),
+        link: '#',
+      },
+    },
+    '/experiences': {
+      bg: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1920&h=1080&fit=crop',
+    },
+    '/meetings-events': {
+      bg: 'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/Riad%20Al%20Assala%20Fes/Hero/_DSC1982-HDR.jpg?w=1920&h=1080&fit=crop',
+      cta: {
+        label: t('meetingsEvents.hero.cta'),
+        link: '/request-quote',
+      },
+    },
+    '/exploring-medina': {
+      bg: 'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/Riad%20Al%20Assala%20Fes/Images%20of%20the%20pages/Exploring%20Medina/1530641f-8cbe-49eb-a2d8-3604d3e994f2.png',
+    },
+    '/exploring-medina/medina': {
+      bg: 'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/Riad%20Al%20Assala%20Fes/Images%20of%20the%20pages/Exploring%20Medina/f04dc945-f820-4c6b-b1c5-e58d15e06502.png',
+    },
+    '/exploring-medina/monuments': {
+      bg: 'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/Riad%20Al%20Assala%20Fes/Images%20of%20the%20pages/Exploring%20Medina/b3a6ae2d-4875-45be-90e9-d718fa544f47.png',
+    },
+    '/exploring-medina/souks': {
+      bg: 'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/Riad%20Al%20Assala%20Fes/Images%20of%20the%20pages/Exploring%20Medina/ef426d97-fece-49f6-b78e-7754b6af49e9.png',
+    },
+    '/gallery': {
+      bg: 'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/Riad%20Al%20Assala%20Fes/Gallery/_DSC1982-HDR.png?w=800',
+    },
+    '/contact': {
+      bg: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1920&h=1080&fit=crop',
+    },
+  };
+
+  // 🔹 Default (homepage)
+  const defaultConfig = {
+    title: t('hero.hotelName'),
+    bg: 'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/Riad%20Al%20Assala%20Fes/Gallery/_DSC1982-HDR.png?w=800',
+    height: 'h-screen',
+    showTitle: true,
+    showBookingBar: true,
+  };
+
+  
+
+
+let currentConfig = CONFIG[location.pathname];
+
+// 👉 DYNAMIC ROOM BACKGROUND
+if (!currentConfig && location.pathname.startsWith("/rooms/")) {
+  const roomId = location.pathname.split("/rooms/")[1];
+
+  const room = accommodationData.find(r => r.id === roomId);
+
+  currentConfig = {
+    bg: room?.images?.[0] || defaultConfig.bg,
+  };
+}
+
+// 👉 EXPERIENCES HERO 🔥
+if (!currentConfig && location.pathname.startsWith("/experiences/")) {
+  const expId = location.pathname.split("/experiences/")[1]?.split("?")[0];
+
+  currentConfig = {
+    bg: experiencesHeroImages[expId] || defaultConfig.bg,
+  };
+}
+
+// 🔹 Merge config 
+const pageConfig = {
+  ...BASE_CONFIG,
+  ...(currentConfig || {}),
+  ...(currentConfig ? {} : defaultConfig),
+};
+
+ 
   return (
-    <section className="relative h-[80vh] w-full overflow-hidden">
-      {/* Background Image/Video Placeholder */}
-      <div className="absolute inset-0 bg-gradient-to-b from-gray-900/40 to-gray-900/60">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=1920&h=1080&fit=crop')] bg-cover bg-center" />
+    <section className={`relative w-full overflow-hidden ${pageConfig.height}`}>
+      
+      {/* Background */}
+      <div className="absolute inset-0">
+        <img
+          src={pageConfig.bg}
+          alt="Hero background"
+          className="w-full h-full object-cover"
+          loading="eager"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black/60" />
       </div>
 
-      {/* Content Overlay */}
+
+     {/* Content */}
       <div className="relative z-10 h-full flex flex-col items-center justify-center text-white">
-        {/* Page Title / Hotel Name */}
-        <h1 className="text-4xl md:text-6xl font-light mb-4 tracking-wide">
-          {pageTitle}
-        </h1>
 
-        {/* Star Rating */}
-        <div className="flex items-center space-x-1 mb-16">
-          {[...Array(5)].map((_, i) => (
-            <Star
-              key={i}
-              className="w-6 h-6 fill-white "
-            />
-          ))}
-        </div>
+        {/* Title + Stars */}
+        {pageConfig.showTitle && (
+          <>
+            <h1 className="text-3xl sm:text-4xl md:text-6xl max-w-4xl mx-auto text-center px-4">
+              {pageConfig.title}
+            </h1>
+
+            <div className="flex items-center space-x-1 mb-10 sm:mb-16">
+              {[...Array(5)].map((_, i) => (
+                <Star
+                  key={i}
+                  className="w-5 h-5 sm:w-6 sm:h-6 fill-white"
+                />
+              ))}
+            </div>
+          </>
+        )}
+
+        {/* CTA Button */}
+        {pageConfig.cta && (
+          <Link
+            to={pageConfig.cta.link}
+            className={`
+              absolute 
+              ${pageConfig.showBookingBar ? 'bottom-20' : 'bottom-10'}
+              left-1/2 -translate-x-1/2
+              bg-white backdrop-blur-lg
+              text-[#1a1a1a]
+              px-5 sm:px-6
+              py-2.5 sm:py-3
+              rounded-xl
+              border border-white/20
+              text-sm sm:text-base
+              hover:bg-white/10
+              hover:text-white
+              hover:border-white/40
+              hover:backdrop-blur-md
+              transition-all duration-300
+              shadow-lg
+            `}
+          >
+            {pageConfig.cta.label}
+          </Link>
+        )}
+
       </div>
 
-      {/* Booking Bar Overlay - Floating at Bottom Center */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 w-full max-w-4xl px-4">
-        <div className="bg-white rounded-lg shadow-lg py-6 px-6">
-          <div className="flex flex-col md:flex-row items-center gap-4">
-            {/* Destination */}
-            <div className="flex-1 w-full md:w-auto">
-              <label className="block text-xs text-gray-600 mb-1" style={{ fontFamily: "Jost, sans-serif" }}>
-                {t('hero.booking.destination')}
-              </label>
-              <div className="relative">
-                <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-                <input
-                  type="text"
-                  value={t('hero.hotelName')}
-                  readOnly
-                  className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400 text-gray-900"
-                  style={{ fontFamily: "Jost, sans-serif" }}
-                />
-              </div>
-            </div>
+      {/* Booking Bar */}
+      {pageConfig.showBookingBar && <BOOKINGBAR />}
 
-            {/* Dates */}
-            <div className="flex-1 w-full md:w-auto">
-              <label className="block text-xs text-gray-600 mb-1" style={{ fontFamily: "Jost, sans-serif" }}>
-                {t('hero.booking.dates')}
-              </label>
-              <div className="relative">
-                <Calendar className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-                <input
-                  type="text"
-                  placeholder={t('hero.booking.dates')}
-                  className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400 text-gray-900"
-                  style={{ fontFamily: "Jost, sans-serif" }}
-                />
-              </div>
-            </div>
-
-            {/* Travelers */}
-            <div className="flex-1 w-full md:w-auto">
-              <label className="block text-xs text-gray-600 mb-1" style={{ fontFamily: "Jost, sans-serif" }}>
-                {t('hero.booking.voyageurs')}
-              </label>
-              <div className="relative">
-                <Users className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-                <input
-                  type="text"
-                  value={t('hero.booking.guests')}
-                  readOnly
-                  className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400 text-gray-900"
-                  style={{ fontFamily: "Jost, sans-serif" }}
-                />
-              </div>
-            </div>
-
-            {/* Book Button */}
-            <div className="w-full md:w-auto">
-              <button 
-                className="w-full md:w-auto bg-gray-900 hover:bg-gray-800 text-white px-8 py-3 rounded-lg font-semibold transition-colors"
-                style={{ fontFamily: "Jost, sans-serif" }}
-              >
-                {t('hero.booking.reserver')}
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
     </section>
   );
 };
 
 export default Hero;
+
+
+
+
+  

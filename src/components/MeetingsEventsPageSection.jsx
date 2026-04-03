@@ -5,362 +5,368 @@ import { ChevronRight } from "lucide-react";
 
 const MeetingsEventsPageSection = () => {
   const { t } = useTranslation();
+  
+  const sections = t("meetingsEvents.activities.sections", { returnObjects: true });
+  
+  const splitArray = (arr = []) => {
+    if (!Array.isArray(arr)) return [[], []];
 
-  const eventTypes = [
-    {
-      id: "diners",
-      key: "diners",
-      image: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200",
-    },
-    {
-      id: "rooftop",
-      key: "rooftop",
-      image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1200",
-    },
-    {
-      id: "privatisation",
-      key: "privatisation",
-      image: "https://images.unsplash.com/photo-1559339352-11d035aa65de?w=1200",
-    },
-  ];
+    const mid = Math.ceil(arr.length / 2);
+    return [arr.slice(0, mid), arr.slice(mid)];
+  };
 
   return (
-    <section className="bg-white py-16">
-      <div className="max-w-[1300px] mx-auto px-6">
+    <section className="bg-mainBg py-16">
+      <div className="max-w-[1200px] mx-auto px-6">
+
         {/* Breadcrumbs */}
-        <div className="mb-8">
-          <nav className="flex items-center gap-2 text-sm text-[#666]" style={{ fontFamily: "Jost, sans-serif" }}>
-            <Link to="/" className="hover:text-[#1a1a1a] transition-colors">
+        <div className="mb-6 md:mb-8">
+          <nav className="flex items-center gap-2 text-sm text-[#666]">
+            <Link to="/" className="hover:text-[#1a1a1a]">
               {t("meetingsEvents.breadcrumbs.home")}
             </Link>
-            <ChevronRight size={14} className="text-[#999]" />
-            <span className="text-[#1a1a1a]">{t("meetingsEvents.breadcrumbs.meetingsEvents")}</span>
+            <ChevronRight size={14} />
+            <span className="text-[#1a1a1a]">
+              {t("meetingsEvents.breadcrumbs.meetingsEvents")}
+            </span>
           </nav>
         </div>
 
-        {/* Main Title */}
-        <div className="text-center mb-12">
-          <h1
-            className="text-[40px] text-[#1a1a1a] mb-6"
-            style={{ fontFamily: "Jost, sans-serif" }}
-          >
-            {t("meetingsEvents.hero.title")}
-          </h1>
-
-          {/* Description */}
-          <p
-            className="text-base text-[#666] max-w-4xl mx-auto mb-8 leading-relaxed"
-            style={{ fontFamily: "Jost, sans-serif" }}
-          >
-            {t("meetingsEvents.featured.description")}
-          </p>
-        </div>
-
-        {/* Services & Amenities Section */}
-        <div className="mb-16">
-          <h2
-            className="text-center text-sm uppercase tracking-wider text-[#1a1a1a] mb-4"
-            style={{ fontFamily: "Jost, sans-serif" }}
-          >
-            {t("meetingsEvents.services.eyebrow")}
+        {/* INTRO */}
+        <div className="text-center max-w-3xl mx-auto py-12 md:py-16 lg:py-20">
+          <h2 className="title-xl mb-6">
+            {t("meetingsEvents.intro.title")}
           </h2>
-          
-          {/* Separator Line */}
-          <div className="w-16 h-px bg-[#1a1a1a] mx-auto mb-8"></div>
 
-          {/* Two Columns */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {/* Left Column */}
-            <ul className="space-y-3">
-              {t("meetingsEvents.services.items.left", { returnObjects: true }).map((item, index) => (
-                <li
-                  key={index}
-                  className="flex items-start gap-3 text-[#1a1a1a]"
-                  style={{ fontFamily: "Jost, sans-serif" }}
-                >
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#1a1a1a] mt-2 flex-shrink-0"></span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-
-            {/* Right Column */}
-            <ul className="space-y-3">
-              {t("meetingsEvents.services.items.right", { returnObjects: true }).map((item, index) => (
-                <li
-                  key={index}
-                  className="flex items-start gap-3 text-[#1a1a1a]"
-                  style={{ fontFamily: "Jost, sans-serif" }}
-                >
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#1a1a1a] mt-2 flex-shrink-0"></span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
+          <div className="flex justify-center gap-4 mb-8 flex-wrap">
+            {t("meetingsEvents.badges", { returnObjects: true }).map((badge, i) => (
+              <span
+                key={i}
+                className={`px-4 py-2 rounded-full text-sm ${
+                  i === 0
+                    ? "px-4 py-2 text-sm rounded-full bg-[#cda73c] text-[#1a1a1a]"
+                    : "px-4 py-2 text-sm rounded-full border border-[#cda73c]"
+                }`}
+              >
+                {badge}
+              </span>
+            ))}
           </div>
+
+          <p className="text-[#555] mb-4 leading-relaxed">
+            {t("meetingsEvents.intro.description")} <br /> {t("meetingsEvents.intro.highlight")}
+          </p>
+
         </div>
 
-        {/* Three Event Type Cards - Side by Side */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-          {eventTypes.map((eventType) => {
-            const eventData = t(`meetingsEvents.eventTypes.${eventType.key}`, { returnObjects: true });
-            return (
-              <EventTypeCard
-                key={eventType.id}
-                eventType={eventType}
-                eventData={eventData}
-                t={t}
-              />
-            );
-          })}
+        {/* 2 BLOCKS */}
+        <div className="grid md:grid-cols-2 gap-10 mb-20">
+
+          {/* EXCLUSIVITY */}
+          <div>
+            <img
+              src="https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/Riad%20Al%20Assala%20Fes/Images%20of%20the%20pages/Meetings%20&%20Events/_DSC2347.png"
+              alt=""
+              className="
+              w-full
+              aspect-[574/383]
+              md:w-[574px]
+              md:h-[383px]
+              object-cover
+              mb-4
+              rounded"
+              loading="lazy"
+            />
+
+            <p className="text-xs uppercase text-gray-500 mb-2">
+              {t("meetingsEvents.blocks.exclusivity.eyebrow")}
+            </p>
+
+            <h3 className="text-xl mb-3">
+              {t("meetingsEvents.blocks.exclusivity.title")}
+            </h3>
+
+            <p className="text-[#555] leading-relaxed">
+              {t("meetingsEvents.blocks.exclusivity.description")}
+            </p>
+          </div>
+
+          {/* CELEBRATIONS */}
+          <div>
+            <img
+              src="https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/Riad%20Al%20Assala%20Fes/Images%20of%20the%20pages/Meetings%20&%20Events/_DSC2423.png"
+              alt=""
+              className="
+                w-full
+                aspect-[574/383]
+                md:w-[574px]
+                md:h-[383px]
+                object-cover
+                mb-4
+                rounded
+              "
+              loading="lazy"
+            />
+
+            <p className="text-xs uppercase text-gray-500 mb-2">
+              {t("meetingsEvents.blocks.celebrations.eyebrow")}
+            </p>
+
+            <h3 className="text-xl mb-3">
+              {t("meetingsEvents.blocks.celebrations.title")}
+            </h3>
+
+            <p className="text-[#555] leading-relaxed">
+              {t("meetingsEvents.blocks.celebrations.description")}
+            </p>
+          </div>
+
         </div>
 
-        {/* Seminars & Workshops Section - Image Left, Text Right */}
-        <SectionWithImage
-          eyebrow={t("meetingsEvents.spaces.eyebrow")}
-          title={t("meetingsEvents.spaces.seminars.title")}
-          description={t("meetingsEvents.spaces.seminars.description")}
-          discoverText={t("meetingsEvents.spaces.seminars.discover")}
-          image="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1200"
-          imagePosition="left"
-        />
-
-        {/* Provided Services Section - Text Left, Image Right */}
-        <SectionWithImage
-          eyebrow={t("meetingsEvents.spaces.eyebrow")}
-          title={t("meetingsEvents.spaces.services.title")}
-          description={t("meetingsEvents.spaces.services.description")}
-          discoverText={t("meetingsEvents.spaces.services.discover")}
-          image="https://images.unsplash.com/photo-1511578314322-379afb476865?w=1200"
-          imagePosition="right"
-        />
-
-        {/* Group Offer Section - Image Left, Text Right */}
-        <SectionWithImage
-          eyebrow={t("meetingsEvents.groupOffer.eyebrow")}
-          title=""
-          description={t("meetingsEvents.groupOffer.description")}
-          discoverText={t("meetingsEvents.groupOffer.discover")}
-          image="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1200"
-          imagePosition="left"
-        />
       </div>
 
-      {/* Gallery Section */}
+      {/* ACTIVITIES / INCENTIVES / SERVICES */}
+      <div className="py-20 px-6">
+
+        <div className="max-w-[1000px] mx-auto">
+
+          {/* TITLE */}
+          <h2 className="text-center title-xl mb-12">
+            {t("meetingsEvents.activities.title")}
+          </h2>
+
+          {/* ===== ACTIVITIES ===== */}
+          {Object.entries(sections).map(([key, section]) => (
+            <div key={key} className="mb-16">
+
+              <h3 className="text-center title-lg mb-4">
+                {section.title}
+              </h3>
+
+              <div className="w-full h-px bg-[#CDA73C]/60 mb-8"></div>
+
+              <div className="grid md:grid-cols-2 gap-10">
+                {splitArray(section.items).map((col, i) => (
+                  <ul key={i} className="space-y-4 text-[#333] text-[15px] leading-relaxed">
+                    {col.map((item, idx) => (
+                      <li key={idx} className="flex items-start gap-3">
+                        <span className="w-2 h-2 mt-2 rounded-full bg-[#CDA73C] flex-shrink-0"></span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                ))}
+              </div>
+
+            </div>
+          ))}
+
+        </div>
+      </div>
+
+      {/* GALLERY (inchangée) */}
       <MeetingsEventsGallery />
     </section>
   );
 };
 
-// Event Type Card Component
-const EventTypeCard = ({ eventType, eventData, t }) => {
-  return (
-    <div className="bg-white border border-[#e0dcd6] rounded-lg overflow-hidden">
-      {/* Image */}
-      <div className="h-[300px] w-full overflow-hidden">
-        <img
-          src={eventType.image}
-          alt={eventData.title}
-          className="w-full h-full object-cover"
-        />
-      </div>
+/* ===========================
+   GALLERY (inchangée)
+=========================== */
 
-      {/* Content */}
-      <div className="p-6">
-        {/* Title */}
-        <h3
-          className="text-2xl font-serif text-[#1a1a1a] mb-3"
-          style={{ fontFamily: "Georgia, serif" }}
-        >
-          {eventData.title}
-        </h3>
-
-        {/* Description */}
-        <p
-          className="text-sm text-[#555] mb-6 leading-relaxed"
-          style={{ fontFamily: "Jost, sans-serif" }}
-        >
-          {eventData.description}
-        </p>
-
-        {/* Button */}
-        <button
-          className="w-full bg-[#1a1a1a] text-white py-3 rounded hover:bg-[#262626] transition-colors"
-          style={{ fontFamily: "Jost, sans-serif" }}
-        >
-          {eventData.discover}
-        </button>
-      </div>
-    </div>
-  );
-};
-
-// Section with Image Component (Left or Right)
-const SectionWithImage = ({ eyebrow, title, description, discoverText, image, imagePosition }) => {
-  return (
-    <div className={`grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-16 ${imagePosition === "right" ? "md:flex-row-reverse" : ""}`}>
-      {/* Image */}
-      <div className={`h-[400px] w-full overflow-hidden rounded-lg ${imagePosition === "right" ? "md:order-2" : "md:order-1"}`}>
-        <img
-          src={image}
-          alt={title || eyebrow}
-          className="w-full h-full object-cover"
-        />
-      </div>
-
-      {/* Content */}
-      <div className={`${imagePosition === "right" ? "md:order-1" : "md:order-2"}`}>
-        {eyebrow && (
-          <p
-            className="text-xs uppercase tracking-wider text-[#666] mb-2"
-            style={{ fontFamily: "Jost, sans-serif" }}
-          >
-            {eyebrow}
-          </p>
-        )}
-        {title && (
-          <h2
-            className="text-3xl font-serif text-[#1a1a1a] mb-4"
-            style={{ fontFamily: "Georgia, serif" }}
-          >
-            {title}
-          </h2>
-        )}
-        <p
-          className="text-base text-[#555] mb-6 leading-relaxed"
-          style={{ fontFamily: "Jost, sans-serif" }}
-        >
-          {description}
-        </p>
-        <button
-          className="bg-[#1a1a1a] text-white px-8 py-3 rounded hover:bg-[#262626] transition-colors"
-          style={{ fontFamily: "Jost, sans-serif" }}
-        >
-          {discoverText}
-        </button>
-      </div>
-    </div>
-  );
-};
-
-// Gallery Component for Meetings & Events
 const MeetingsEventsGallery = () => {
   const { t } = useTranslation();
   const [open, setOpen] = useState(false);
+  const [selectedImage, setSelectedImage] = useState(null);
 
-  // New images for meetings & events
   const images = [
-    "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1600", // Meeting room
-    "https://images.unsplash.com/photo-1511578314322-379afb476865?w=800", // Event setup
-    "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800", // Rooftop event
-    "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800", // Private dinner
-    "https://images.unsplash.com/photo-1559339352-11d035aa65de?w=800", // Celebration
-    "https://images.unsplash.com/photo-1511578314322-379afb476865?w=800", // Workshop
-    "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800", // Conference
-    "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800", // Outdoor event
-    "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800", // Reception
-    "https://images.unsplash.com/photo-1559339352-11d035aa65de?w=800", // Group gathering
+    "https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/Riad%20Al%20Assala%20Fes/Images%20of%20the%20pages/Meetings%20&%20Events/_DSC2419.png?w=1600",
+    "https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/Riad%20Al%20Assala%20Fes/Images%20of%20the%20pages/Meetings%20&%20Events/_DSC2420.png?w=800",
+    "https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/Riad%20Al%20Assala%20Fes/Images%20of%20the%20pages/Meetings%20&%20Events/Riad%20Alassala%20Fes%20-%20hotel%20photoshoot%20in%20morocco%20fez%2010.png?w=800",
+    "https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/Riad%20Al%20Assala%20Fes/Images%20of%20the%20pages/Meetings%20&%20Events/_DSC2347.png?w=800",
+    "https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/Riad%20Al%20Assala%20Fes/Images%20of%20the%20pages/Meetings%20&%20Events/_DSC2423-2.png?w=800",
   ];
 
+  const handleOpen = (img) => {
+    setSelectedImage(img);
+    setOpen(true);
+  };
+
+  const currentIndex = images.indexOf(selectedImage);
+
+  const nextImage = () => {
+    setSelectedImage(images[(currentIndex + 1) % images.length]);
+  };
+
+  const prevImage = () => {
+    setSelectedImage(
+      images[(currentIndex - 1 + images.length) % images.length]
+    );
+  };
+
   return (
-    <section className="bg-[#f7f5f3] py-8 w-full mt-16">
-      {/* Full-width background, inner container for content */}
-      <div className="w-full">
-        <div className="max-w-[1440px] mx-auto px-8">
-          
-          {/* Title */}
-          <h2
-            className="text-center text-[40px] font-serif text-[#1a1a1a] mb-12"
-            style={{ fontFamily: "Georgia, serif" }}
-          >
-            {t("gallery.title")}
-          </h2>
+    <section className="max-w-[1200px] mx-auto py-12 mt-16 px-4">
 
-          {/* GRID */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            
-            {/* LEFT BIG IMAGE - 16:9 aspect ratio, spans 2 columns */}
-            <div className="md:col-span-2 relative overflow-hidden rounded-[4px]">
-              <img
-                src={images[0]}
-                alt=""
-                className="w-full h-[442px] object-cover"
-              />
-            </div>
+      {/* TITLE */}
+      <h2 className="text-center title-xl mb-10">
+        {t("gallery.title")}
+      </h2>
 
-            {/* RIGHT GRID (4 square images) */}
-            <div className="grid grid-cols-2 gap-4 h-[442px]">
-              
-            {images.slice(1, 5).map((img, index) => {
-                const isLast = index === 3;
-
-                return (
-                  <div
-                    key={index}
-                    className="relative overflow-hidden rounded-[4px] aspect-square"
-                  >
-                    <img
-                      src={img}
-                      alt=""
-                      className="w-full h-[284px] object-cover"
-                    />
-
-                    {/* BUTTON ON LAST IMAGE - Centered bottom, white rounded pill */}
-                    {isLast && (
-                      <div className="absolute inset-0 flex items-end justify-center pb-5 pointer-events-none">
-                        <button
-                          onClick={() => setOpen(true)}
-                          className="
-                            bg-white
-                            text-[#1a1a1a]
-                            px-6
-                            py-2.5
-                            rounded-full
-                            text-[13px]
-                            font-medium
-                            shadow-sm
-                            hover:bg-gray-50
-                            transition-colors
-                            pointer-events-auto
-                            cursor-pointer
-                          "
-                          style={{ fontFamily: "Jost, sans-serif" }}
-                        >
-                          {t("gallery.viewAllPhotos")} ({images.length})
-                        </button>
-                      </div>
-                    )}
-                  </div>
-                );
-              })}
-            </div>
-
+      {/* GRID RESPONSIVE */}
+      <div className="flex flex-col md:flex-row gap-6 items-stretch">
+          {/* LEFT */}
+          <div className="w-full md:w-[642px] flex-shrink-0">
+            <img
+              src={images[0]}
+              className="w-full h-[250px] sm:h-[320px] md:h-[442px] object-cover rounded"
+            />
           </div>
-        </div>
+
+          {/* RIGHT */}
+          <div className="flex-1 grid grid-cols-2 grid-rows-2 gap-4 h-[250px] sm:h-[320px] md:h-[442px]">
+            {images.slice(1, 5).map((img, index) => {
+              const isLast = index === 3;
+
+              return (
+                <div
+                  key={index}
+                  className="relative overflow-hidden rounded-[4px]"
+                >
+                  <img
+                    src={img}
+                    className="w-full h-full object-cover rounded"
+                  />
+
+                  {isLast && (
+                    <div className="absolute inset-0 flex items-end justify-center pb-4">
+                      <div className="absolute inset-0 bg-black/10"></div>
+
+                      <button
+                        onClick={() => {
+                          setSelectedImage(images[0]);
+                          setOpen(true);
+                        }}
+                        className="
+                          relative z-10
+                          bg-white
+                          text-[#1a1a1a]
+                          px-5 py-2
+                          rounded-full
+                          text-sm
+                          font-medium
+                          shadow-md
+                          transition-all duration-300
+                          hover:bg-black/40
+                          hover:text-white
+                          cursor-pointer
+                        "
+                      >
+                        {t("gallery.viewAllPhotos")} ({images.length})
+                      </button>
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+
       </div>
 
       {/* MODAL */}
       {open && (
-        <div className="fixed inset-0 z-[100] bg-black/70 overflow-y-auto">
-          <button
-            onClick={() => setOpen(false)}
-            className="fixed top-6 right-6 bg-white px-3 py-2 rounded-full text-sm z-[101]"
+        <div
+          className="fixed inset-0 bg-black/80 flex items-center justify-center z-50"
+          onClick={() => setOpen(false)}
+        >
+          <div
+            className="relative max-w-5xl w-full px-4"
+            onClick={(e) => e.stopPropagation()}
           >
-            ✕
-          </button>
+            {/* MAIN IMAGE */}
+            <img
+              src={selectedImage}
+              className="w-full max-h-[80vh] object-contain rounded mb-4"
+            />
 
-          <div className="max-w-[1200px] mx-auto px-6 py-24 grid grid-cols-1 md:grid-cols-2 gap-6">
-            {images.map((img, i) => (
-              <img
-                key={i}
-                src={img}
-                className="w-full h-full object-cover rounded-xl"
-                alt=""
-              />
-            ))}
+            {/* NAVIGATION */}
+            <button
+              onClick={prevImage}
+              className="
+                absolute left-2 sm:left-4 top-1/2 -translate-y-1/2
+                 w-9 h-9 sm:w-10 sm:h-10
+                flex items-center justify-center
+                rounded-full
+                bg-white/20
+                backdrop-blur-md
+                text-white text-xl sm:text-2xl
+                shadow-md
+                transition-all duration-200
+                hover:bg-white/40
+                hover:scale-110
+                cursor-pointer
+              "
+            >
+              ‹
+            </button>
+
+            <button
+              onClick={nextImage}
+              className="
+                absolute right-2 sm:right-4 top-1/2 -translate-y-1/2
+                w-9 h-9 sm:w-10 sm:h-10
+                flex items-center justify-center
+                rounded-full
+                bg-white/20
+                backdrop-blur-md
+                text-white text-xl sm:text-2xl
+                shadow-md
+                transition-all duration-200
+                hover:bg-white/40
+                hover:scale-110
+                cursor-pointer
+              "
+            >
+              ›
+            </button>
+
+            {/* THUMBNAILS */}
+            <div className="flex gap-2 overflow-x-auto mt-4">
+              {images.map((img, i) => (
+                <img
+                  key={i}
+                  src={img}
+                  onClick={() => setSelectedImage(img)}
+                  className={`w-16 h-16 sm:w-20 sm:h-20 object-cover rounded cursor-pointer border ${
+                    selectedImage === img
+                      ? "border-white"
+                      : "border-transparent"
+                  }`}
+                />
+              ))}
+            </div>
+
+            {/* CLOSE */}
+            <button
+              onClick={() => setOpen(false)}
+              className="
+                absolute top-3 right-3 sm:top-4 sm:right-4
+                w-9 h-9 sm:w-10 sm:h-10
+                flex items-center justify-center
+                rounded-full
+                bg-white/90
+                text-black
+                shadow-md
+                hover:scale-110
+                transition
+                cursor-pointer
+              "
+            >
+              ✕
+            </button>
           </div>
         </div>
       )}
+
     </section>
   );
 };

@@ -1,9 +1,10 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { MapPin, Phone, Mail, MessageCircle } from 'lucide-react';
 
 const ContactPageSection = () => {
   const { t } = useTranslation();
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -12,6 +13,9 @@ const ContactPageSection = () => {
     message: ''
   });
 
+  const [notification, setNotification] = useState(null);
+  const [loading, setLoading] = useState(false);
+
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -19,82 +23,138 @@ const ContactPageSection = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
+
+    // ✅ Validation champs obligatoires
+    if (!formData.name || !formData.email || !formData.message) {
+      setNotification({
+        type: "error",
+        message: "Veuillez remplir les champs obligatoires",
+      });
+      return;
+    }
+
+    // ✅ Validation email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      setNotification({
+        type: "error",
+        message: "Email invalide",
+      });
+      return;
+    }
+
+    setLoading(true);
+
+    try {
+      const response = await fetch(
+        "https://formsubmit.co/ajax/reservations@riadalassalafes.com", // 🔴 MET TON EMAIL
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            name: formData.name,
+            email: formData.email,
+            phone: formData.phone,
+            subject: formData.subject,
+            message: formData.message,
+            _subject: t("contact.page.form.subjectEmail"),
+          }),
+        }
+      );
+
+      if (response.ok) {
+        setNotification({
+          type: "success",
+          message: t("contact.page.form.successMessage"),
+        });
+
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          subject: "",
+          message: "",
+        });
+      } else {
+        throw new Error();
+      }
+    } catch (error) {
+      setNotification({
+        type: "error",
+        message: t("contact.page.form.errorMessage"),
+      });
+    } finally {
+      setLoading(false);
+    }
   };
 
-  // Google Maps embed URL for Riad Alassala Fes
-  const mapUrl = `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3308.5!2d-4.9781406!3d34.0596204!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd9ff4a9bae5a97d%3A0x79ad14c9dc151882!2sRiad%20Alassala%20Fes!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus`;
+  // ✅ Auto-hide notification
+  useEffect(() => {
+    if (notification) {
+      const timer = setTimeout(() => {
+        setNotification(null);
+      }, 3000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [notification]);
 
   return (
     <div className="bg-[#fafafa] min-h-screen">
-      {/* Form Section */}
       <section className="container-wide py-16 md:py-24">
         <div className="max-w-4xl mx-auto">
-          {/* Title and Subtitle */}
+
+          {/* Title */}
           <div className="text-center mb-12">
-            <h2 
-              className="text-3xl md:text-4xl font-serif text-neutral-900 mb-4"
-              style={{ fontFamily: "Georgia, serif" }}
-            >
+            <h2 className="text-3xl md:text-4xl font-serif text-neutral-900 mb-4">
               {t('contact.page.form.title')}
             </h2>
-            <p 
-              className="text-base text-neutral-600"
-              style={{ fontFamily: "Jost, sans-serif" }}
-            >
+            <p className="text-base text-neutral-600">
               {t('contact.page.form.subtitle')}
             </p>
-           
           </div>
 
           {/* Form */}
-          <form onSubmit={handleSubmit} className="space-y-6">
-            {/* Row 1: Name and Email */}
+          <form onSubmit={handleSubmit} method="POST" className="space-y-6">
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <label 
-                  className="block text-xs uppercase tracking-wider text-neutral-700 mb-2"
-                  style={{ fontFamily: "Jost, sans-serif" }}
-                >
-                  {t('contact.page.form.name')}
+                <label className="block text-xs uppercase tracking-wider text-neutral-700 mb-2">
+                  {t('contact.page.form.name')} *
                 </label>
                 <input
                   type="text"
                   name="name"
+                  required
                   value={formData.name}
                   onChange={handleChange}
                   className="w-full px-4 py-3 border border-neutral-300 rounded bg-white focus:outline-none focus:ring-2 focus:ring-neutral-900"
-                  style={{ fontFamily: "Jost, sans-serif" }}
                 />
               </div>
+
               <div>
-                <label 
-                  className="block text-xs uppercase tracking-wider text-neutral-700 mb-2"
-                  style={{ fontFamily: "Jost, sans-serif" }}
-                >
-                  {t('contact.page.form.email')}
+                <label className="block text-xs uppercase tracking-wider text-neutral-700 mb-2">
+                  {t('contact.page.form.email')} *
                 </label>
                 <input
                   type="email"
                   name="email"
+                  required
                   value={formData.email}
                   onChange={handleChange}
                   className="w-full px-4 py-3 border border-neutral-300 rounded bg-white focus:outline-none focus:ring-2 focus:ring-neutral-900"
-                  style={{ fontFamily: "Jost, sans-serif" }}
                 />
               </div>
             </div>
 
-            {/* Row 2: Phone and Subject */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <label 
-                  className="block text-xs uppercase tracking-wider text-neutral-700 mb-2"
-                  style={{ fontFamily: "Jost, sans-serif" }}
-                >
+                <label className="block text-xs uppercase tracking-wider text-neutral-700 mb-2">
                   {t('contact.page.form.phone')}
                 </label>
                 <input
@@ -102,15 +162,12 @@ const ContactPageSection = () => {
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-neutral-300 rounded bg-white focus:outline-none focus:ring-2 focus:ring-neutral-900"
-                  style={{ fontFamily: "Jost, sans-serif" }}
+                  className="w-full px-4 py-3 border border-neutral-300 rounded bg-white"
                 />
               </div>
+
               <div>
-                <label 
-                  className="block text-xs uppercase tracking-wider text-neutral-700 mb-2"
-                  style={{ fontFamily: "Jost, sans-serif" }}
-                >
+                <label className="block text-xs uppercase tracking-wider text-neutral-700 mb-2">
                   {t('contact.page.form.subject')}
                 </label>
                 <input
@@ -118,47 +175,49 @@ const ContactPageSection = () => {
                   name="subject"
                   value={formData.subject}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-neutral-300 rounded bg-white focus:outline-none focus:ring-2 focus:ring-neutral-900"
-                  style={{ fontFamily: "Jost, sans-serif" }}
+                  className="w-full px-4 py-3 border border-neutral-300 rounded bg-white"
                 />
               </div>
             </div>
-          
 
-            {/* Row 3: Message */}
             <div>
-              <label 
-                className="block text-xs uppercase tracking-wider text-neutral-700 mb-2"
-                style={{ fontFamily: "Jost, sans-serif" }}
-              >
-                {t('contact.page.form.message')}
+              <label className="block text-xs uppercase tracking-wider text-neutral-700 mb-2">
+                {t('contact.page.form.message')} *
               </label>
               <textarea
                 name="message"
+                required
                 value={formData.message}
                 onChange={handleChange}
                 rows={6}
-                className="w-full px-4 py-3 border border-neutral-300 rounded bg-white focus:outline-none focus:ring-2 focus:ring-neutral-900 resize-none"
-                style={{ fontFamily: "Jost, sans-serif" }}
+                className="w-full px-4 py-3 border border-neutral-300 rounded bg-white resize-none"
               />
             </div>
 
-            {/* Submit Button */}
             <div className="flex justify-end">
               <button
                 type="submit"
-                className="bg-neutral-900 text-white px-8 py-3 text-sm uppercase tracking-wider hover:bg-neutral-800 transition-colors"
-                style={{ fontFamily: "Jost, sans-serif" }}
+                disabled={loading}
+                className="bg-neutral-900 text-white px-8 py-3 text-sm uppercase tracking-wider hover:bg-neutral-800 transition"
               >
-                {t('contact.page.form.sendButton')}
+                {loading ? "..." : t('contact.page.form.sendButton')}
               </button>
             </div>
+
           </form>
-          
         </div>
       </section>
 
- 
+      {/* Toast */}
+      {notification && (
+        <div
+          className={`fixed bottom-5 right-5 px-6 py-3 rounded shadow-lg text-white ${
+            notification.type === "success" ? "bg-green-600" : "bg-red-600"
+          }`}
+        >
+          {notification.message}
+        </div>
+      )}
     </div>
   );
 };

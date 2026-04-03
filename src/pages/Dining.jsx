@@ -5,9 +5,8 @@ import Footer from '../components/Footer';
 
 const Dining = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen pt-20">
       <Navbar />
-      <Hero />
       <DiningPageSection />
       <Footer />
     </div>
