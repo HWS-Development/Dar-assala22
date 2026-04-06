@@ -205,12 +205,14 @@ const MeetingsEventsGallery = () => {
   };
 
   return (
-    <section className="max-w-[1200px] mx-auto py-12 mt-16 px-4">
+    <section className="max-w-[1200px] mx-auto">
 
       {/* TITLE */}
+      {/*
       <h2 className="text-center title-xl mb-10">
         {t("gallery.title")}
       </h2>
+      */}
 
       {/* GRID RESPONSIVE */}
       <div className="flex flex-col md:flex-row gap-6 items-stretch">
@@ -237,6 +239,8 @@ const MeetingsEventsGallery = () => {
                     className="w-full h-full object-cover rounded"
                   />
 
+
+                {/*
                   {isLast && (
                     <div className="absolute inset-0 flex items-end justify-center pb-4">
                       <div className="absolute inset-0 bg-black/10"></div>
@@ -265,6 +269,7 @@ const MeetingsEventsGallery = () => {
                       </button>
                     </div>
                   )}
+                */}
                 </div>
               );
             })}

@@ -115,7 +115,7 @@ const ExperiencesSection = () => {
                     {/* BUTTON */}
                     <button
                       onClick={() => navigate(`/experiences/${item.id}`)}
-                      className="mt-auto border py-2 rounded hover:bg-black hover:text-white transition"
+                      className="mt-auto border py-2 rounded hover:bg-black hover:text-white transition cursor-pointer"
                     >
                       {t("experiences.cta")}
                     </button>

@@ -94,7 +94,7 @@ const DiningSection = () => {
 
                     <button
                       onClick={() => navigate(`/dining/${item.id}`)}
-                      className="mt-auto border py-2 rounded hover:bg-black hover:text-white transition"
+                      className="mt-auto border py-2 rounded hover:bg-black hover:text-white transition cursor-pointer"
                     >
                       {t("dining.button")}
                     </button>

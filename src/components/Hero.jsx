@@ -37,6 +37,7 @@ const Hero = () => {
     },
     '/dining/LeVerdoyantCoffeeShop': {
       bg: 'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/Riad%20Al%20Assala%20Fes/Images%20of%20the%20pages/Restaurant/Riad%20Alassala%20Fes%20-%20hotel%20photoshoot%20in%20morocco%204.jpg',
+      cover: true,
       cta: {
         label: t('leVerdoyantCoffeeShop.cta'),
         link: '#',
@@ -63,6 +64,7 @@ const Hero = () => {
     },
     '/exploring-medina/souks': {
       bg: 'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/Riad%20Al%20Assala%20Fes/Images%20of%20the%20pages/Exploring%20Medina/ef426d97-fece-49f6-b78e-7754b6af49e9.png',
+      cover: true,
     },
     '/gallery': {
       bg: 'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/Riad%20Al%20Assala%20Fes/Gallery/_DSC1982-HDR.png?w=800',
@@ -103,6 +105,7 @@ if (!currentConfig && location.pathname.startsWith("/experiences/")) {
 
   currentConfig = {
     bg: experiencesHeroImages[expId] || defaultConfig.bg,
+    cover: ["hammam", "medina"].includes(expId),
   };
 }
 
@@ -119,13 +122,13 @@ const pageConfig = {
       
       {/* Background */}
       <div className="absolute inset-0">
-        <img
+         <img
           src={pageConfig.bg}
           alt="Hero background"
-          className="w-full h-full object-cover"
+          className={`w-full h-full ${pageConfig.cover ? "object-cover" : ""}`}
           loading="eager"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black/60" />
+        <div className="absolute inset-0" />
       </div>
 
 
