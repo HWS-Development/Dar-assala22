@@ -1104,6 +1104,49 @@
       }
     }
   },
+  "offers": {
+    "breadcrumbs": {
+      "home": "Accueil",
+      "offers": "Offres"
+    },
+    "intro": {
+      "title": "Offres",
+      "description": "Découvrez nos offres exclusives au Riad Alassala Fès et profitez de séjours exceptionnels au cœur de la médina de Fès.\nConçues pour sublimer chaque instant, nos offres répondent à toutes vos envies : escapade romantique, séjour en famille ou moment de détente.\nVivez une hospitalité marocaine authentique alliant confort, charme et sérénité à Fès."
+    },
+    "main": {
+      "title": "Offre du moment",
+      "subtitle": "Offre réservation directe",
+      "list": [
+        "Hébergement en chambre ou suite",
+        "Petit-déjeuner inclus",
+        "-15 % sur votre séjour en réservant directement"
+      ],
+      "cta": "Découvrir cette offre"
+    },
+    "direct": {
+      "title": "Réservation directe",
+      "description": "Profitez d’un avantage exclusif en réservant directement votre séjour au Riad Alassala Fès. Bénéficiez du meilleur tarif garanti et d’une expérience soigneusement pensée au cœur de la médina de Fès.",
+      "includesTitle": "Cette offre comprend",
+      "list": [
+        "Hébergement en chambre ou suite",
+        "Petit-déjeuner inclus",
+        "Accueil avec thé à la menthe traditionnel et pâtisseries marocaines",
+        "Accès à la terrasse panoramique avec vue sur toute la médina de Fès",
+        "Une expérience authentique au cœur de Fès"
+      ],
+      "card": {
+        "title": "Fès",
+        "subtitle": "Riad Alassala Fès",
+        "description": "Au cœur de la médina de Fès, le Riad Alassala Fès offre une escapade paisible et authentique. Alliant charme traditionnel, confort élégant et vues panoramiques, il incarne l’art de vivre marocain raffiné.",
+        "cta1": "Découvrir l’hôtel",
+        "cta2": "Réserver cette offre"
+      }
+    },
+    "conditions": {
+      "title": "Conditions de l’offre",
+      "description": "Cette offre exclusive est réservée aux réservations directes effectuées via le site officiel du Riad Alassala Fès ou par contact direct. Elle permet de bénéficier de -15 % sur le tarif flexible pour l’hébergement en chambre ou suite, avec petit-déjeuner inclus, sous réserve de disponibilité.\n\nCette promotion n’est pas cumulable avec d’autres offres et s’applique à certaines catégories de chambres. Elle peut être modifiée ou retirée à tout moment sans préavis. Les conditions de paiement et d’annulation dépendent du tarif sélectionné au moment de la réservation.\nProfitez du meilleur tarif garanti pour votre séjour à Fès en réservant directement."
+    }
+  },
   "exploringMedina": {
     "hero": {
       "title": "Exploration de la Médina"

@@ -77,7 +77,7 @@ const Hero = () => {
   // 🔹 Default (homepage)
   const defaultConfig = {
     title: t('hero.hotelName'),
-    bg: 'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/Riad%20Al%20Assala%20Fes/Gallery/_DSC1982-HDR.png?w=800',
+    bg: 'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/Riad%20Al%20Assala%20Fes/Gallery/_DSC1949-HDR.png?w=800',
     height: 'h-screen',
     showTitle: true,
     showBookingBar: true,

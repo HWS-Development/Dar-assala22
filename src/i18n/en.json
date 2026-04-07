@@ -1089,6 +1089,49 @@
       }
     }
   },
+  "offers": {
+    "breadcrumbs": {
+      "home": "Home",
+      "offers": "Offers"
+    },
+    "intro": {
+      "title": "Offers",
+      "description": "Discover our exclusive offers at Riad Alassala Fez and enjoy exceptional stays in the heart of the Medina of Fez.\nDesigned to enhance every moment, our offers cater to all your desires: romantic getaway, family stay, or relaxing escape.\nExperience authentic Moroccan hospitality combined with comfort, charm, and serenity in Fez."
+    },
+    "main": {
+      "title": "Offer of the Moment",
+      "subtitle": "Direct Booking Offer",
+      "list": [
+        "Accommodation in a room or suite",
+        "Breakfast included",
+        "-15% on your stay when booking directly"
+      ],
+      "cta": "Discover this offer"
+    },
+    "direct": {
+      "title": "Direct Booking",
+      "description": "Enjoy an exclusive benefit by booking your stay directly at Riad Alassala Fez. Take advantage of the best guaranteed rate and a carefully crafted experience in the heart of the Medina of Fez.",
+      "includesTitle": "This offer includes",
+      "list": [
+        "Accommodation in a room or suite",
+        "Breakfast included",
+        "A welcome with traditional mint tea and Moroccan pastries",
+        "Access to the panoramic terrace overlooking the entire Medina of Fez",
+        "An authentic experience in the heart of Fez"
+      ],
+      "card": {
+        "title": "Fez",
+        "subtitle": "Riad Alassala Fès",
+        "description": "In the heart of the Medina of Fez, Riad Alassala Fez offers a peaceful and authentic escape. Blending traditional charm, elegant comfort, and panoramic city views, it embodies the refined art of Moroccan living.",
+        "cta1": "Discover the hotel",
+        "cta2": "Book this offer"
+      }
+    },
+    "conditions": {
+      "title": "Offer conditions",
+      "description": "This exclusive offer is reserved for direct bookings made through the official website of Riad Alassala Fez or via direct contact. It allows you to benefit from -15% off the flexible rate for room or suite accommodation, with breakfast included, subject to availability.\n\nThis promotion cannot be combined with other offers and applies to selected room categories. It may be modified or withdrawn at any time without prior notice. Payment and cancellation conditions depend on the rate selected at the time of booking.\nEnjoy the best guaranteed rate for your stay in Fez by booking directly."
+    }
+  },
   "exploringMedina": {
     "hero": {
       "title": "Exploring the Medina"

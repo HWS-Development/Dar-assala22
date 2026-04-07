@@ -1,13 +1,11 @@
 export const galleryPhotos = [
-  "https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/Riad%20Al%20Assala%20Fes/Gallery/_DSC1982-HDR.png?w=800",
-  "https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/Riad%20Al%20Assala%20Fes/Images%20of%20the%20pages/Rooms%20&%20Suites/juniorSuite/_DSC2301-HDR-Modifier-2.png",
-  "https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/Riad%20Al%20Assala%20Fes/Gallery/_DSC2423.png?w=800",
-  "https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/Riad%20Al%20Assala%20Fes/Gallery/_DSC2420.png?w=800",
-  "https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/Riad%20Al%20Assala%20Fes/Gallery/_DSC2423-2.png?w=800",
-  "https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/Riad%20Al%20Assala%20Fes/Gallery/Riad%20Alassala%20Fes%20-%20hotel%20photoshoot%20in%20morocco%20fez%2010.jpg?w=800",
-  "https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/Riad%20Al%20Assala%20Fes/Images%20of%20the%20pages/Rooms%20&%20Suites/standardDoubleRoom/_DSC2235-HDR-Panorama.png",
-  "https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/Riad%20Al%20Assala%20Fes/Images%20of%20the%20pages/Rooms%20&%20Suites/juniorSuite/_DSC2301-HDR-Modifier-2.png",
-  "https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/Riad%20Al%20Assala%20Fes/Images%20of%20the%20pages/Rooms%20&%20Suites/executiveSuite/_DSC2256-HDR.png",
-  "https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/Riad%20Al%20Assala%20Fes/Images%20of%20the%20pages/Rooms%20&%20Suites/duplex/_DSC2331-HDR-Modifier.png",
+  "https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/Riad%20Al%20Assala%20Fes/Gallery/_DSC1949-HDR.png?w=800",
+  "https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/Riad%20Al%20Assala%20Fes/Gallery/Riad%20Alassala%20Fes%20-%20Hotel%20Restaurant%20in%20Morocco%209.jpg",
+  "https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/Riad%20Al%20Assala%20Fes/Gallery/riad%20alassal%20fes%20hotel%20family%203.png",
+  "https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/Riad%20Al%20Assala%20Fes/Gallery/_DSC2223-HDR.png",
+  "https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/Riad%20Al%20Assala%20Fes/Gallery/Riad%20Alassala%20Fes%20-%20hotel%20photoshoot%20in%20morocco%20fez%203.jpeg",
+  "https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/Riad%20Al%20Assala%20Fes/Gallery/Riad%20Alassala%20Fes%20-%20hotel%20photoshoot%20by%20guests%201.png",
+  "https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/Riad%20Al%20Assala%20Fes/Gallery/_DSC2123.png",
+  "https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/Riad%20Al%20Assala%20Fes/Gallery/_DSC2021-HDR-Modifier.png"
 
 ];

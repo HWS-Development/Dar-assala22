@@ -35,7 +35,7 @@ const Navbar = () => {
     { key: 'dining', href: '/dining', isRoute: true },
     { key: 'exploringMedina', href: '/exploring-medina', isRoute: true },
     { key: 'meetingsEvents', href: '/meetings-events', isRoute: true },
-    { key: 'offers', href: '#', isRoute: false },
+    { key: 'offers', href: '/offers', isRoute: true },
     { key: 'experiences', href: '/experiences', isRoute: true },
     { key: 'gallery', href: '/gallery', isRoute: true },
     { key: 'contact', href: '/contact', isRoute: true },

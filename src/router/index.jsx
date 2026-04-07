@@ -14,6 +14,7 @@ import Experiences from '../pages/Experiences';
 import ExperienceDetail from '../pages/ExperienceDetail';
 import MeetingsEvents from '../pages/MeetingsEvents';
 import RequestQuote from '../pages/request-quote';
+import Offers from '../pages/offers';
 import Gallery from '../pages/Gallery';
 import Contact from '../pages/Contact';
 import RootLayout from "../layouts/RootLayout";
@@ -82,6 +83,10 @@ const router = createBrowserRouter([
       {
         path: '/request-quote',
         element: <RequestQuote />,
+      },
+      {
+        path: '/offers',
+        element: <Offers />,
       },
       {
         path: '/gallery',
