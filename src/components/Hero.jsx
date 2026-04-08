@@ -66,6 +66,10 @@ const Hero = () => {
       bg: 'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/Riad%20Al%20Assala%20Fes/Images%20of%20the%20pages/Exploring%20Medina/ef426d97-fece-49f6-b78e-7754b6af49e9.png',
       cover: true,
     },
+    '/DiscoverOffer': {
+      bg: 'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/Riad%20Al%20Assala%20Fes/Images%20of%20the%20pages/Offres/_DSC1964-HDR.png',
+      cover: true,
+    },
     '/gallery': {
       bg: 'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/Riad%20Al%20Assala%20Fes/Gallery/_DSC1982-HDR.png?w=800',
     },

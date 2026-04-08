@@ -719,7 +719,9 @@
         "success": "Message envoyé avec succès",
         "successMessage": "Nous vous répondrons très bientôt",
         "error": "Erreur",
-        "errorMessage": "Une erreur est survenue, veuillez réessayer"
+        "errorMessage": "Une erreur est survenue, veuillez réessayer",
+        "requiredFields": "Veuillez remplir les champs obligatoires",
+        "invalidEmail": "Email invalide"
       },
       "info": {
         "title": "INFORMATIONS DE CONTACT",
@@ -1341,7 +1343,15 @@
       "budgetPlaceholder": "Votre budget en euros",
       "commentPlaceholder": "Votre texte ici",
       "selectCountry": "Sélectionnez un pays",
-      "submit": "Valider le formulaire"
+      "submit": "Valider le formulaire",
+      "subjectEmail": "Nouvelle demande de devis",
+      "success": "Message envoyé avec succès",
+      "successMessage": "Nous vous répondrons très bientôt",
+      "error": "Erreur",
+      "errorMessage": "Une erreur est survenue, veuillez réessayer",
+      "selectArrivalFirst": "Veuillez d'abord sélectionner une date d'arrivée",
+      "requiredFields": "Veuillez remplir les champs obligatoires",
+      "invalidEmail": "Email invalide"
     }
   }
 

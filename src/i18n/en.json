@@ -699,7 +699,9 @@
         "success": "Your message has been sent successfully",
         "successMessage": "Our team will get back to you as soon as possible",
         "error": "Something went wrong",
-        "errorMessage": "An error occurred. Please try again later"
+        "errorMessage": "An error occurred. Please try again later",
+        "requiredFields": "Please fill in the required fields",
+        "invalidEmail": "Invalid email address"
       },
       "info": {
         "title": "CONTACT INFORMATION",
@@ -1326,7 +1328,15 @@
       "budgetPlaceholder": "Your budget in euros",
       "commentPlaceholder": "Your message",
       "selectCountry": "Select a country",
-      "submit": "Submit form"
+      "submit": "Submit form",
+     "subjectEmail": "New quote request",
+      "success": "Message sent successfully",
+      "successMessage": "We will get back to you very soon",
+      "error": "Error",
+      "errorMessage": "An error occurred, please try again",
+      "selectArrivalFirst": "Please select an arrival date first",
+      "requiredFields": "Please fill in the required fields",
+      "invalidEmail": "Invalid email address"
     }
   }
 }

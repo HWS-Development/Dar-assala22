@@ -13,16 +13,19 @@ const ContactPageSection = () => {
     message: ''
   });
 
-  const [notification, setNotification] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [notification, setNotification] = useState(null);
+
 
   const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
   };
 
+  // SUBMIT (EMAIL)
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -30,7 +33,7 @@ const ContactPageSection = () => {
     if (!formData.name || !formData.email || !formData.message) {
       setNotification({
         type: "error",
-        message: "Veuillez remplir les champs obligatoires",
+        message: t("contact.page.form.requiredFields")
       });
       return;
     }
@@ -40,7 +43,7 @@ const ContactPageSection = () => {
     if (!emailRegex.test(formData.email)) {
       setNotification({
         type: "error",
-        message: "Email invalide",
+        message: t("contact.page.form.invalidEmail")
       });
       return;
     }
@@ -49,7 +52,7 @@ const ContactPageSection = () => {
 
     try {
       const response = await fetch(
-        "https://formsubmit.co/ajax/reservations@riadalassalafes.com", // 🔴 MET TON EMAIL
+        "https://formsubmit.co/ajax/reservations@riadalassalafes.com", // 🔴  EMAIL
         {
           method: "POST",
           headers: {

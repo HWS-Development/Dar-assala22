@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { ChevronRight } from "lucide-react";
@@ -5,19 +6,147 @@ import { ChevronRight } from "lucide-react";
 const RequestQuotePageSection = () => {
   const { t } = useTranslation();
 
-    const countries = [
-    "Maroc",
-    "France",
-    "Espagne",
-    "Allemagne",
-    "Italie",
-    "Royaume-Uni",
-    ];
+  const countries = [
+    "Maroc","France","Espagne","Allemagne","Italie","Royaume-Uni"
+  ];
+
+  // STATE
+  const [formData, setFormData] = useState({
+    lastName: "",
+    firstName: "",
+    email: "",
+    phone: "",
+    address: "",
+    city: "",
+    country: "",
+    arrival: "",
+    departure: "",
+    company: "",
+    participants: "",
+    budget: "",
+    eventType: "",
+    comment: ""
+  });
+
+  const [loading, setLoading] = useState(false);
+  const [notification, setNotification] = useState(null);
 
   const inputClass =
     "w-full px-4 py-3 border border-gray-300 rounded-md bg-white text-sm focus:outline-none focus:border-black";
 
   const labelClass = "block text-[13px] text-gray-700 mb-1";
+
+  // HANDLE INPUT
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  // SUBMIT (EMAIL)
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    // Validation
+    if (!formData.lastName || !formData.firstName || !formData.email) {
+      setNotification({
+        type: "error",
+        message: t("requestQuote.form.requiredFields")
+      });
+      return;
+    }
+
+    // ✅ Validation email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      setNotification({
+        type: "error",
+        message: t("requestQuote.form.invalidEmail")
+      });
+      return;
+    }
+
+    setLoading(true);
+
+    try {
+      const response = await fetch(
+        "https://formsubmit.co/ajax/reservations@riadalassalafes.com",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json"
+          },
+          body: JSON.stringify({
+            _subject: t("requestQuote.form.subjectEmail"),
+
+            Nom: formData.lastName,
+            Prenom: formData.firstName,
+            Email: formData.email,
+            Telephone: formData.phone,
+            Adresse: formData.address,
+            Ville: formData.city,
+            Pays: formData.country,
+            Arrivee: formData.arrival,
+            Depart: formData.departure,
+            Entreprise: formData.company,
+            Participants: formData.participants,
+            Budget: formData.budget,
+            Type_evenement: formData.eventType,
+            Message: formData.comment,
+          })
+        }
+      );
+
+      if (response.ok) {
+        setNotification({
+          type: "success",
+          message:  t("requestQuote.form.successMessage"),
+        });
+
+        // RESET
+        setFormData({
+          lastName: "",
+          firstName: "",
+          email: "",
+          phone: "",
+          address: "",
+          city: "",
+          country: "",
+          arrival: "",
+          departure: "",
+          company: "",
+          participants: "",
+          budget: "",
+          eventType: "",
+          comment: ""
+        });
+
+      } else {
+        throw new Error();
+      }
+
+    } catch (error) {
+      setNotification({
+        type: "error",
+        message: t("requestQuote.form.errorMessage"),
+      });
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // AUTO HIDE TOAST
+  useEffect(() => {
+    if (notification) {
+      const timer = setTimeout(() => setNotification(null), 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [notification]);
+
+  const today = new Date().toISOString().split("T")[0];
 
   return (
     <section className="bg-mainBg py-16">
@@ -26,7 +155,9 @@ const RequestQuotePageSection = () => {
         {/* Breadcrumb */}
         <div className="mt-6 md:mt-8 mb-6 md:mb-8">
           <nav className="flex items-center gap-2 text-sm text-gray-500">
-            <Link to="/" className="hover:text-[#1a1a1a]">{t("requestQuote.breadcrumbs.home")}</Link>
+            <Link to="/" className="hover:text-[#1a1a1a]">
+              {t("requestQuote.breadcrumbs.home")}
+            </Link>
             <ChevronRight size={14} />
             <Link to="/meetings-events" className="hover:text-[#1a1a1a]">
               {t("meetingsEvents.breadcrumbs.meetingsEvents")}
@@ -48,22 +179,36 @@ const RequestQuotePageSection = () => {
         {/* FORM CONTAINER */}
         <div className="bg-white p-6 md:p-10 rounded shadow-sm">
 
-          {/* Required */}
           <p className="text-sm text-gray-500 mb-6">
             {t("requestQuote.intro.required")}
           </p>
 
-          <form className="space-y-6">
+          
+          <form onSubmit={handleSubmit} className="space-y-6">
 
             {/* ROW 1 */}
             <div className="grid md:grid-cols-2 gap-6">
               <div>
                 <label className={labelClass}>{t("requestQuote.form.lastName")}</label>
-                <input className={inputClass} placeholder="Dupont" required />
+                <input
+                  name="lastName"
+                  value={formData.lastName}
+                  onChange={handleChange}
+                  className={inputClass}
+                  placeholder="Dupont"
+                  required
+                />
               </div>
               <div>
                 <label className={labelClass}>{t("requestQuote.form.firstName")}</label>
-                <input className={inputClass} placeholder="Jean" required />
+                <input
+                  name="firstName"
+                  value={formData.firstName}
+                  onChange={handleChange}
+                  className={inputClass}
+                  placeholder="Jean"
+                  required
+                />
               </div>
             </div>
 
@@ -71,38 +216,65 @@ const RequestQuotePageSection = () => {
             <div className="grid md:grid-cols-2 gap-6">
               <div>
                 <label className={labelClass}>{t("requestQuote.form.email")}</label>
-                <input className={inputClass} placeholder="contact@email.com" required/>
+                <input
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  className={inputClass}
+                  placeholder="contact@email.com"
+                  required
+                />
               </div>
               <div>
                 <label className={labelClass}>{t("requestQuote.form.phone")}</label>
-                <input className={inputClass} placeholder="+212 6 12 34 56 78" />
+                <input
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  className={inputClass}
+                  placeholder="+212 6 12 34 56 78"
+                />
               </div>
             </div>
 
             {/* ADDRESS */}
             <div>
               <label className={labelClass}>{t("requestQuote.form.address")}</label>
-              <input className={inputClass} />
+              <input
+                name="address"
+                value={formData.address}
+                onChange={handleChange}
+                className={inputClass}
+              />
             </div>
 
             {/* ROW 3 */}
             <div className="grid md:grid-cols-2 gap-6">
               <div>
                 <label className={labelClass}>{t("requestQuote.form.city")}</label>
-                <input className={inputClass} required/>
+                <input
+                  name="city"
+                  value={formData.city}
+                  onChange={handleChange}
+                  className={inputClass}
+                  required
+                />
               </div>
               <div>
                 <label className={labelClass}>{t("requestQuote.form.country")}</label>
-                <select className={inputClass} required>
-                    <option value="">
-                        {t("requestQuote.form.selectCountry")}
+                <select
+                  name="country"
+                  value={formData.country}
+                  onChange={handleChange}
+                  className={inputClass}
+                  required
+                >
+                  <option value="">{t("requestQuote.form.selectCountry")}</option>
+                  {countries.map((country) => (
+                    <option key={country} value={country}>
+                      {country}
                     </option>
-
-                    {countries.map((country) => (
-                        <option key={country} value={country}>
-                        {country}
-                        </option>
-                    ))}
+                  ))}
                 </select>
               </div>
             </div>
@@ -111,11 +283,31 @@ const RequestQuotePageSection = () => {
             <div className="grid md:grid-cols-2 gap-6">
               <div>
                 <label className={labelClass}>{t("requestQuote.form.arrival")}</label>
-                <input type="date" className={inputClass} />
+                <input
+                  type="date"
+                  name="arrival"
+                  value={formData.arrival}
+                  onChange={handleChange}
+                  min={today}
+                  className={inputClass}
+                />
               </div>
               <div>
                 <label className={labelClass}>{t("requestQuote.form.departure")}</label>
-                <input type="date" className={inputClass} />
+                <input
+                  type="date"
+                  name="departure"
+                  value={formData.departure}
+                  onChange={handleChange}
+                  min={formData.arrival}
+                  disabled={!formData.arrival}
+                  className={`${inputClass} ${!formData.arrival ? "opacity-50 cursor-not-allowed" : ""}`}
+                />
+                {!formData.arrival && (
+                  <p className="text-xs text-gray-500 mt-1">
+                    {t("requestQuote.form.selectArrivalFirst")}
+                  </p>
+                )}
               </div>
             </div>
 
@@ -123,18 +315,37 @@ const RequestQuotePageSection = () => {
             <div className="grid md:grid-cols-2 gap-6">
               <div>
                 <label className={labelClass}>{t("requestQuote.form.company")}</label>
-                <input className={inputClass} placeholder={t("requestQuote.form.companyPlaceholder")} required/>
+                <input
+                  name="company"
+                  value={formData.company}
+                  onChange={handleChange}
+                  className={inputClass}
+                  placeholder={t("requestQuote.form.companyPlaceholder")}
+                  required
+                />
               </div>
               <div>
                 <label className={labelClass}>{t("requestQuote.form.participants")}</label>
-                <input className={inputClass} placeholder="30" />
+                <input
+                  name="participants"
+                  value={formData.participants}
+                  onChange={handleChange}
+                  className={inputClass}
+                  placeholder="30"
+                />
               </div>
             </div>
 
             {/* BUDGET */}
             <div>
               <label className={labelClass}>{t("requestQuote.form.budget")}</label>
-              <input className={inputClass}  placeholder={t("requestQuote.form.budgetPlaceholder")} />
+              <input
+                name="budget"
+                value={formData.budget}
+                onChange={handleChange}
+                className={inputClass}
+                placeholder={t("requestQuote.form.budgetPlaceholder")}
+              />
             </div>
 
             {/* EVENT TYPE */}
@@ -142,30 +353,23 @@ const RequestQuotePageSection = () => {
               <label className={labelClass}>{t("requestQuote.form.eventType")}</label>
               <div className="flex gap-6 mt-2 text-sm">
                 <label className="flex items-center gap-2">
-                  <input type="radio" />
+                  <input
+                    type="radio"
+                    name="eventType"
+                    value="personal"
+                    onChange={handleChange}
+                  />
                   {t("requestQuote.form.personal")}
                 </label>
                 <label className="flex items-center gap-2">
-                  <input type="radio" />
+                  <input
+                    type="radio"
+                    name="eventType"
+                    value="professional"
+                    onChange={handleChange}
+                  />
                   {t("requestQuote.form.professional")}
                 </label>
-              </div>
-            </div>
-
-            {/* DESTINATION */}
-            <div>
-              <label className={labelClass}>{t("requestQuote.form.destination")}</label>
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-2 mt-2 text-sm">
-                {[
-                  "Lille","Paris","Ribeauville","La Baule",
-                  "Deauville","Dinard","Marrakech",
-                  "Enghien-les-Bains","Cannes","New York"
-                ].map((city) => (
-                  <label key={city} className="flex items-center gap-2">
-                    <input type="checkbox" />
-                    {city}
-                  </label>
-                ))}
               </div>
             </div>
 
@@ -173,6 +377,9 @@ const RequestQuotePageSection = () => {
             <div>
               <label className={labelClass}>{t("requestQuote.form.comment")}</label>
               <textarea
+                name="comment"
+                value={formData.comment}
+                onChange={handleChange}
                 className={`${inputClass} h-[120px]`}
                 placeholder={t("requestQuote.form.commentPlaceholder")}
               />
@@ -181,22 +388,25 @@ const RequestQuotePageSection = () => {
             {/* SUBMIT */}
             <div className="flex justify-end">
               <button
-                className="
-                  bg-[#696969]
-                  text-white
-                  px-6 py-3
-                  rounded
-                  hover:bg-[#555]
-                  transition
-                "
+                disabled={loading}
+                className="bg-[#696969] text-white px-6 py-3 rounded hover:bg-[#555] transition"
               >
-                {t("requestQuote.form.submit")}
+                {loading ? "..." : t("requestQuote.form.submit")}
               </button>
             </div>
 
           </form>
         </div>
       </div>
+
+      {/* TOAST */}
+      {notification && (
+        <div className={`fixed bottom-5 right-5 px-6 py-3 rounded shadow-lg text-white ${
+          notification.type === "success" ? "bg-green-600" : "bg-red-600"
+        }`}>
+          {notification.message}
+        </div>
+      )}
     </section>
   );
 };
