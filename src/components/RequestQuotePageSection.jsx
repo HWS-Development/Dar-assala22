@@ -23,7 +23,6 @@ const RequestQuotePageSection = () => {
     departure: "",
     company: "",
     participants: "",
-    budget: "",
     eventType: "",
     comment: ""
   });
@@ -39,10 +38,17 @@ const RequestQuotePageSection = () => {
   // HANDLE INPUT
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
+
+    setFormData(prev => {
+      const updated = { ...prev, [name]: value };
+
+      // 👉 SI utilisateur change ARRIVEE
+      if (name === "arrival") {
+        updated.departure = value; // même date automatiquement
+      }
+
+      return updated;
+    });
   };
 
   // SUBMIT (EMAIL)
@@ -93,7 +99,6 @@ const RequestQuotePageSection = () => {
             Depart: formData.departure,
             Entreprise: formData.company,
             Participants: formData.participants,
-            Budget: formData.budget,
             Type_evenement: formData.eventType,
             Message: formData.comment,
           })
@@ -119,7 +124,6 @@ const RequestQuotePageSection = () => {
           departure: "",
           company: "",
           participants: "",
-          budget: "",
           eventType: "",
           comment: ""
         });
@@ -293,21 +297,14 @@ const RequestQuotePageSection = () => {
                 />
               </div>
               <div>
-                <label className={labelClass}>{t("requestQuote.form.departure")}</label>
+                <label className={labelClass}>{t("requestQuote.form.departure")}</label>     
                 <input
                   type="date"
                   name="departure"
                   value={formData.departure}
-                  onChange={handleChange}
-                  min={formData.arrival}
-                  disabled={!formData.arrival}
-                  className={`${inputClass} ${!formData.arrival ? "opacity-50 cursor-not-allowed" : ""}`}
+                  disabled
+                  className={`${inputClass} opacity-50 cursor-not-allowed`}
                 />
-                {!formData.arrival && (
-                  <p className="text-xs text-gray-500 mt-1">
-                    {t("requestQuote.form.selectArrivalFirst")}
-                  </p>
-                )}
               </div>
             </div>
 
@@ -334,18 +331,6 @@ const RequestQuotePageSection = () => {
                   placeholder="30"
                 />
               </div>
-            </div>
-
-            {/* BUDGET */}
-            <div>
-              <label className={labelClass}>{t("requestQuote.form.budget")}</label>
-              <input
-                name="budget"
-                value={formData.budget}
-                onChange={handleChange}
-                className={inputClass}
-                placeholder={t("requestQuote.form.budgetPlaceholder")}
-              />
             </div>
 
             {/* EVENT TYPE */}
