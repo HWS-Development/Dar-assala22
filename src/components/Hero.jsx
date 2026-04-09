@@ -71,10 +71,11 @@ const Hero = () => {
       cover: true,
     },
     '/gallery': {
-      bg: 'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/Riad%20Al%20Assala%20Fes/Gallery/_DSC1982-HDR.png?w=800',
+      bg: 'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/Riad%20Al%20Assala%20Fes/Gallery/riad%20alassal%20fes%20hotel%20family%203.png',
+      cover: true,
     },
     '/contact': {
-      bg: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1920&h=1080&fit=crop',
+      bg: 'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/Riad%20Al%20Assala%20Fes/Images%20of%20the%20pages/Contact/photo-1521791136064-7986c2920216.jpg',
     },
   };
 
