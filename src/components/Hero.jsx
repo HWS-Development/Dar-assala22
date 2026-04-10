@@ -6,7 +6,21 @@ import accommodationData from '../data/accommodationData';
 import experiencesHeroImages from "../data/experiencesHeroImages";
 
 const Hero = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+
+  const lang = i18n.language.startsWith('fr') ? 'fr' : 'en';
+
+  const MENU_PDFS = {
+    leVerdoyant: {
+      fr: "https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/Riad%20Al%20Assala%20Fes/PDF/leVerdoyant/LE%20VERDOYANT%20(FR).pdf",
+      en: "https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/Riad%20Al%20Assala%20Fes/PDF/leVerdoyant/Le%20Verdoyant%20(EN).pdf",
+    },
+    LeVerdoyantCoffeeShop: {
+      fr: "https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/Riad%20Al%20Assala%20Fes/PDF/LeVerdoyantCoffeeShop/Menu%20Drinks%20FR.pdf",
+      en: "https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/Riad%20Al%20Assala%20Fes/PDF/LeVerdoyantCoffeeShop/Menu%20Drinks%20EN.pdf",
+    },
+  };
+
   const location = useLocation();
 
   // 🔹 Base config 
@@ -25,7 +39,7 @@ const Hero = () => {
       bg: 'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/Riad%20Al%20Assala%20Fes/Images%20of%20the%20pages/Restaurant/_DSC1982-HDR.png',
       cta: {
         label: t('leVerdoyant.cta'),
-        link: '#',
+        link: MENU_PDFS.leVerdoyant[lang],
       },
     },
     '/dining/LeVerdoyantRooftop': {
@@ -40,7 +54,7 @@ const Hero = () => {
       cover: true,
       cta: {
         label: t('leVerdoyantCoffeeShop.cta'),
-        link: '#',
+        link: MENU_PDFS.LeVerdoyantCoffeeShop[lang],
       },
     },
     '/experiences': {
@@ -160,8 +174,10 @@ const pageConfig = {
 
         {/* CTA Button */}
         {pageConfig.cta && (
-          <Link
-            to={pageConfig.cta.link}
+          <a
+            href={pageConfig.cta.link} 
+            target="_blank"
+            rel="noopener noreferrer"
             className={`
               absolute 
               ${pageConfig.showBookingBar ? 'bottom-20' : 'bottom-10'}
@@ -182,7 +198,7 @@ const pageConfig = {
             `}
           >
             {pageConfig.cta.label}
-          </Link>
+          </a>
         )}
 
       </div>
