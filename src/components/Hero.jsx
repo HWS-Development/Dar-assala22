@@ -44,10 +44,12 @@ const Hero = () => {
     },
     '/dining/LeVerdoyantRooftop': {
       bg: 'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/Riad%20Al%20Assala%20Fes/Images%20of%20the%20pages/Restaurant/_DSC1997-HDR.png',
+      /*
       cta: {
         label: t('leVerdoyantRooftop.cta'),
         link: '#',
       },
+      */
     },
     '/dining/LeVerdoyantCoffeeShop': {
       bg: 'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/Riad%20Al%20Assala%20Fes/Images%20of%20the%20pages/Restaurant/Riad%20Alassala%20Fes%20-%20hotel%20photoshoot%20in%20morocco%204.jpg',
