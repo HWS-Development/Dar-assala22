@@ -34,6 +34,7 @@ const Hero = () => {
   const CONFIG = {
     '/accommodation': {
       bg: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1920&h=1080&fit=crop',
+      cover: true,
     },
     '/dining/leVerdoyant': {
       bg: 'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/Riad%20Al%20Assala%20Fes/Images%20of%20the%20pages/Restaurant/_DSC1982-HDR.png',
@@ -41,26 +42,27 @@ const Hero = () => {
         label: t('leVerdoyant.cta'),
         link: MENU_PDFS.leVerdoyant[lang],
       },
+      cover: true,
     },
     '/dining/LeVerdoyantRooftop': {
       bg: 'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/Riad%20Al%20Assala%20Fes/Images%20of%20the%20pages/Restaurant/_DSC1997-HDR.png',
-      /*
       cta: {
         label: t('leVerdoyantRooftop.cta'),
-        link: '#',
+        link: MENU_PDFS.leVerdoyant[lang],
       },
-      */
+      cover: true,
     },
     '/dining/LeVerdoyantCoffeeShop': {
       bg: 'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/Riad%20Al%20Assala%20Fes/Images%20of%20the%20pages/Restaurant/Riad%20Alassala%20Fes%20-%20hotel%20photoshoot%20in%20morocco%204.jpg',
-      cover: true,
       cta: {
         label: t('leVerdoyantCoffeeShop.cta'),
         link: MENU_PDFS.LeVerdoyantCoffeeShop[lang],
       },
+      cover: true,
     },
     '/experiences': {
       bg: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1920&h=1080&fit=crop',
+      cover: true,
     },
     '/meetings-events': {
       bg: 'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/Riad%20Al%20Assala%20Fes/Hero/_DSC1982-HDR.jpg?w=1920&h=1080&fit=crop',
@@ -68,15 +70,19 @@ const Hero = () => {
         label: t('meetingsEvents.hero.cta'),
         link: '/request-quote',
       },
+      cover: true,
     },
     '/exploring-medina': {
       bg: 'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/Riad%20Al%20Assala%20Fes/Images%20of%20the%20pages/Exploring%20Medina/1530641f-8cbe-49eb-a2d8-3604d3e994f2.png',
+      cover: true,
     },
     '/exploring-medina/medina': {
       bg: 'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/Riad%20Al%20Assala%20Fes/Images%20of%20the%20pages/Exploring%20Medina/f04dc945-f820-4c6b-b1c5-e58d15e06502.png',
+      cover: true,
     },
     '/exploring-medina/monuments': {
       bg: 'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/Riad%20Al%20Assala%20Fes/Images%20of%20the%20pages/Exploring%20Medina/b3a6ae2d-4875-45be-90e9-d718fa544f47.png',
+      cover: true,
     },
     '/exploring-medina/souks': {
       bg: 'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/Riad%20Al%20Assala%20Fes/Images%20of%20the%20pages/Exploring%20Medina/ef426d97-fece-49f6-b78e-7754b6af49e9.png',
@@ -92,6 +98,7 @@ const Hero = () => {
     },
     '/contact': {
       bg: 'https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/Riad%20Al%20Assala%20Fes/Images%20of%20the%20pages/Contact/photo-1521791136064-7986c2920216.jpg',
+      cover: true,
     },
   };
 
@@ -117,6 +124,7 @@ if (!currentConfig && location.pathname.startsWith("/rooms/")) {
 
   currentConfig = {
     bg: room?.images?.[0] || defaultConfig.bg,
+    cover: true,
   };
 }
 
@@ -127,6 +135,7 @@ if (!currentConfig && location.pathname.startsWith("/experiences/")) {
   currentConfig = {
     bg: experiencesHeroImages[expId] || defaultConfig.bg,
     cover: ["hammam", "medina"].includes(expId),
+    cover: true,
   };
 }
 
@@ -164,7 +173,7 @@ const pageConfig = {
             </h1>
 
             <div className="flex items-center space-x-1 mb-10 sm:mb-16">
-              {[...Array(5)].map((_, i) => (
+              {[...Array(4)].map((_, i) => (
                 <Star
                   key={i}
                   className="w-5 h-5 sm:w-6 sm:h-6 fill-white"
