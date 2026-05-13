@@ -4,6 +4,7 @@ import { Star } from 'lucide-react';
 import BOOKINGBAR from '../components/BookingBar';
 import accommodationData from '../data/accommodationData';
 import experiencesHeroImages from "../data/experiencesHeroImages";
+import offersData from "../data/offersData";
 
 const Hero = () => {
   const { t, i18n } = useTranslation();
@@ -134,7 +135,16 @@ if (!currentConfig && location.pathname.startsWith("/experiences/")) {
 
   currentConfig = {
     bg: experiencesHeroImages[expId] || defaultConfig.bg,
-    cover: ["hammam", "medina"].includes(expId),
+    cover: true,
+  };
+}
+
+// 👉 OFFERS DETAIL HERO
+if (!currentConfig && location.pathname.startsWith("/offers/")) {
+  const offerId = location.pathname.split("/offers/")[1]?.split("?")[0];
+  const offerDetail = offersData.details[offerId];
+  currentConfig = {
+    bg: offerDetail?.heroImage || '/images/herooffers.jpg',
     cover: true,
   };
 }

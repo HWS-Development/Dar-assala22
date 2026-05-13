@@ -1100,38 +1100,87 @@
       "title": "Offers",
       "description": "Discover our exclusive offers at Riad Alassala Fez and enjoy exceptional stays in the heart of the Medina of Fez.\nDesigned to enhance every moment, our offers cater to all your desires: romantic getaway, family stay, or relaxing escape.\nExperience authentic Moroccan hospitality combined with comfort, charm, and serenity in Fez."
     },
-    "main": {
-      "title": "Offer of the Moment",
-      "subtitle": "Direct Booking Offer",
-      "list": [
-        "Accommodation in a room or suite",
-        "Breakfast included",
-        "-15% on your stay when booking directly"
+    "featured": {
+      "badge": "Offer of the Moment",
+      "title": "A Mother's Day Escape in Fes",
+      "link": "mothers-day",
+      "items": [
+        "Traditional Fassi breakfasts",
+        "Special Mother's Day dinner included",
+        "Elegant in-room setup with petals and candles"
       ],
       "cta": "Discover this offer"
     },
+    "cards": [
+      {
+        "id": "eid-escape",
+        "title": "Eid al-Adha Serenity Escape",
+        "items": [
+          "Accommodation in a room or suite",
+          "Traditional Fassi breakfasts",
+          "Eid celebration evening with live music, tea time & pastries"
+        ],
+        "cta": "Discover this offer"
+      },
+      {
+        "id": "direct-booking",
+        "title": "Direct Booking Offer",
+        "items": [
+          "Accommodation in a room or suite",
+          "Breakfast included",
+          "-15% on your stay when booking directly"
+        ],
+        "cta": "Discover this offer"
+      }
+    ],
+    "detail": {
+      "includesTitle": "This offer includes",
+      "conditionsTitle": "Offer conditions",
+      "bookCta": "Book this offer",
+      "discoverHotelCta": "Discover the hotel",
+      "riadTitle": "Fez",
+      "riadSubtitle": "Riad Aalassala Fès",
+      "riadDescription": "In the heart of the Medina of Fez, Riad Alassala Fez offers a peaceful and authentic escape. Blending traditional charm, elegant comfort, and panoramic city views, it embodies the refined art of Moroccan living."
+    },
+    "mothersDay": {
+      "title": "A Mother's Day Escape in Fes",
+      "intro": "Celebrate mothers, wives, and all the special women in your life with a meaningful and memorable escape. This offer has been thoughtfully designed to turn a simple gesture into a heartfelt experience, filled with warmth, care, and precious moments to share and cherish.",
+      "items": [
+        { "text": "Accommodation in a room or suite" },
+        { "text": "Moroccan tea & sweet treats welcome experience" },
+        { "text": "Traditional Fassi breakfasts", "desc": "Served around the fountain in the peaceful atmosphere of the patio" },
+        { "text": "Special Mother's Day dinner, thoughtfully prepared to celebrate this meaningful occasion" },
+        { "text": "Golden hour experience on the panoramic terrace", "desc": "Overlooking the timeless medina rooftops" },
+        { "text": "Special in-room setup", "desc": "A delicate touch of petals and candles to create a warm and intimate atmosphere" },
+        { "text": "Medina discovery recommendations", "desc": "Explore the timeless alleys, artisan souks, and hidden treasures of Fes through our carefully selected recommendations." },
+        { "text": "Late check-out (subject to availability)" }
+      ],
+      "conditions": "This offer is valid from May 1st to May 31st, subject to availability. The package is priced per night for 2 guests. During this period, guests can enjoy this special experience as part of a limited-time celebration.\n\nPlease note that this offer cannot be combined with any other ongoing promotions or special offers."
+    },
+    "eid": {
+      "title": "Eid al-Adha Serenity Escape",
+      "intro": "Indulge in a thoughtfully curated Eid experience, where every detail is designed to blend comfort, tradition, and meaningful moments in the heart of Fès.",
+      "items": [
+        { "text": "Accommodation in a room or suite" },
+        { "text": "Traditional Moroccan welcome tea" },
+        { "text": "Traditional Fassi breakfasts included", "desc": "Served each morning around the fountain, in the peaceful atmosphere of the patio" },
+        { "text": "Eid Celebration Evening – June 27", "desc": "Live Moroccan music, tea time & pastries" },
+        { "text": "Golden hour terrace experience" },
+        { "text": "Personalized destination assistance", "desc": "Tailored recommendations to explore Fès, from iconic monuments and souks to family-friendly cultural experiences" }
+      ],
+      "conditions": "This offer is available throughout the Eid al-Adha holiday period, subject to availability. Please note that the Eid evening experience will be exclusively available for reservations on June 27th.\n\nThe offer cannot be combined with any other promotions. Upon submission of the reservation form, our reservations team will contact you to provide further details and assist with finalizing your stay."
+    },
     "direct": {
       "title": "Direct Booking",
-      "description": "Enjoy an exclusive benefit by booking your stay directly at Riad Alassala Fez. Take advantage of the best guaranteed rate and a carefully crafted experience in the heart of the Medina of Fez.",
-      "includesTitle": "This offer includes",
-      "list": [
-        "Accommodation in a room or suite",
-        "Breakfast included",
-        "A welcome with traditional mint tea and Moroccan pastries",
-        "Access to the panoramic terrace overlooking the entire Medina of Fez",
-        "An authentic experience in the heart of Fez"
+      "intro": "Enjoy an exclusive benefit by booking your stay directly at Riad Alassala Fez. Take advantage of the best guaranteed rate and a carefully crafted experience in the heart of the Medina of Fez.",
+      "items": [
+        { "text": "Accommodation in a room or suite" },
+        { "text": "Breakfast included" },
+        { "text": "A welcome with traditional mint tea and Moroccan pastries" },
+        { "text": "Access to the panoramic terrace overlooking the entire Medina of Fez" },
+        { "text": "An authentic experience in the heart of Fez" }
       ],
-      "card": {
-        "title": "Fez",
-        "subtitle": "Riad Alassala Fès",
-        "description": "In the heart of the Medina of Fez, Riad Alassala Fez offers a peaceful and authentic escape. Blending traditional charm, elegant comfort, and panoramic city views, it embodies the refined art of Moroccan living.",
-        "cta1": "Discover the hotel",
-        "cta2": "Book this offer"
-      }
-    },
-    "conditions": {
-      "title": "Offer conditions",
-      "description": "This exclusive offer is reserved for direct bookings made through the official website of Riad Alassala Fez or via direct contact. It allows you to benefit from -15% off the flexible rate for room or suite accommodation, with breakfast included, subject to availability.\n\nThis promotion cannot be combined with other offers and applies to selected room categories. It may be modified or withdrawn at any time without prior notice. Payment and cancellation conditions depend on the rate selected at the time of booking.\nEnjoy the best guaranteed rate for your stay in Fez by booking directly."
+      "conditions": "This exclusive offer is reserved for direct bookings made through the official website of Riad Alassala Fez or via direct contact. It allows you to benefit from -15% off the flexible rate for room or suite accommodation, with breakfast included, subject to availability.\n\nThis promotion cannot be combined with other offers and applies to selected room categories. It may be modified or withdrawn at any time without prior notice. Payment and cancellation conditions depend on the rate selected at the time of booking.\nEnjoy the best guaranteed rate for your stay in Fez by booking directly."
     }
   },
   "exploringMedina": {

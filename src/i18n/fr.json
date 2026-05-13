@@ -1115,38 +1115,87 @@
       "title": "Offres",
       "description": "Découvrez nos offres exclusives au Riad Alassala Fès et profitez de séjours exceptionnels au cœur de la médina de Fès.\nConçues pour sublimer chaque instant, nos offres répondent à toutes vos envies : escapade romantique, séjour en famille ou moment de détente.\nVivez une hospitalité marocaine authentique alliant confort, charme et sérénité à Fès."
     },
-    "main": {
-      "title": "Offre du moment",
-      "subtitle": "Offre réservation directe",
-      "list": [
-        "Hébergement en chambre ou suite",
-        "Petit-déjeuner inclus",
-        "-15 % sur votre séjour en réservant directement"
+    "featured": {
+      "badge": "Offre du moment",
+      "title": "Une Escapade pour la Fête des Mères à Fès",
+      "link": "mothers-day",
+      "items": [
+        "Petits-déjeuners Fassis traditionnels",
+        "Dîner spécial Fête des Mères inclus",
+        "Mise en scène élégante avec pétales et bougies"
       ],
       "cta": "Découvrir cette offre"
     },
-    "direct": {
-      "title": "Réservation directe",
-      "description": "Profitez d’un avantage exclusif en réservant directement votre séjour au Riad Alassala Fès. Bénéficiez du meilleur tarif garanti et d’une expérience soigneusement pensée au cœur de la médina de Fès.",
-      "includesTitle": "Cette offre comprend",
-      "list": [
-        "Hébergement en chambre ou suite",
-        "Petit-déjeuner inclus",
-        "Accueil avec thé à la menthe traditionnel et pâtisseries marocaines",
-        "Accès à la terrasse panoramique avec vue sur toute la médina de Fès",
-        "Une expérience authentique au cœur de Fès"
-      ],
-      "card": {
-        "title": "Fès",
-        "subtitle": "Riad Alassala Fès",
-        "description": "Au cœur de la médina de Fès, le Riad Alassala Fès offre une escapade paisible et authentique. Alliant charme traditionnel, confort élégant et vues panoramiques, il incarne l’art de vivre marocain raffiné.",
-        "cta1": "Découvrir l’hôtel",
-        "cta2": "Réserver cette offre"
+    "cards": [
+      {
+        "id": "eid-escape",
+        "title": "Escapade Sérénité de l'Aïd al-Adha",
+        "items": [
+          "Hébergement en chambre ou suite",
+          "Petits-déjeuners Fassis traditionnels",
+          "Soirée de l'Aïd avec musique live, thé et pâtisseries"
+        ],
+        "cta": "Découvrir cette offre"
+      },
+      {
+        "id": "direct-booking",
+        "title": "Offre Réservation Directe",
+        "items": [
+          "Hébergement en chambre ou suite",
+          "Petit-déjeuner inclus",
+          "-15 % sur votre séjour en réservant directement"
+        ],
+        "cta": "Découvrir cette offre"
       }
+    ],
+    "detail": {
+      "includesTitle": "Cette offre comprend",
+      "conditionsTitle": "Conditions de l'offre",
+      "bookCta": "Réserver cette offre",
+      "discoverHotelCta": "Découvrir l'hôtel",
+      "riadTitle": "Fès",
+      "riadSubtitle": "Riad Aalassala Fès",
+      "riadDescription": "Au cœur de la médina de Fès, le Riad Alassala Fès offre une escapade paisible et authentique. Alliant charme traditionnel, confort élégant et vues panoramiques sur la ville, il incarne l'art de vivre marocain raffiné."
     },
-    "conditions": {
-      "title": "Conditions de l’offre",
-      "description": "Cette offre exclusive est réservée aux réservations directes effectuées via le site officiel du Riad Alassala Fès ou par contact direct. Elle permet de bénéficier de -15 % sur le tarif flexible pour l’hébergement en chambre ou suite, avec petit-déjeuner inclus, sous réserve de disponibilité.\n\nCette promotion n’est pas cumulable avec d’autres offres et s’applique à certaines catégories de chambres. Elle peut être modifiée ou retirée à tout moment sans préavis. Les conditions de paiement et d’annulation dépendent du tarif sélectionné au moment de la réservation.\nProfitez du meilleur tarif garanti pour votre séjour à Fès en réservant directement."
+    "mothersDay": {
+      "title": "Une Escapade pour la Fête des Mères à Fès",
+      "intro": "Célébrez les mères, les épouses et toutes les femmes spéciales de votre vie avec une escapade significative et mémorable. Cette offre a été soigneusement conçue pour transformer un simple geste en une expérience sincère, empreinte de chaleur, d'attention et de précieux moments à partager.",
+      "items": [
+        { "text": "Hébergement en chambre ou suite" },
+        { "text": "Accueil avec thé marocain et douceurs sucrées" },
+        { "text": "Petits-déjeuners Fassis traditionnels", "desc": "Servis autour de la fontaine dans l'atmosphère paisible du patio" },
+        { "text": "Dîner spécial Fête des Mères, soigneusement préparé pour célébrer cette occasion" },
+        { "text": "Expérience golden hour sur la terrasse panoramique", "desc": "Avec vue sur les toits intemporels de la médina" },
+        { "text": "Mise en scène en chambre", "desc": "Une touche délicate de pétales et de bougies pour créer une atmosphère chaleureuse et intime" },
+        { "text": "Recommandations de découverte de la médina", "desc": "Explorez les ruelles intemporelles, les souks d'artisans et les trésors cachés de Fès grâce à nos recommandations soigneusement sélectionnées." },
+        { "text": "Late check-out (sous réserve de disponibilité)" }
+      ],
+      "conditions": "Cette offre est valable du 1er au 31 mai, sous réserve de disponibilité. Le forfait est proposé par nuit pour 2 personnes. Durant cette période, les clients peuvent profiter de cette expérience spéciale dans le cadre d'une célébration à durée limitée.\n\nVeuillez noter que cette offre ne peut être combinée avec aucune autre promotion ou offre spéciale en cours."
+    },
+    "eid": {
+      "title": "Escapade Sérénité de l'Aïd al-Adha",
+      "intro": "Profitez d'une expérience de l'Aïd soigneusement élaborée, où chaque détail est conçu pour allier confort, tradition et moments significatifs au cœur de Fès.",
+      "items": [
+        { "text": "Hébergement en chambre ou suite" },
+        { "text": "Thé de bienvenue marocain traditionnel" },
+        { "text": "Petits-déjeuners Fassis traditionnels inclus", "desc": "Servis chaque matin autour de la fontaine, dans l'atmosphère paisible du patio" },
+        { "text": "Soirée de célébration de l'Aïd – 27 juin", "desc": "Musique marocaine live, thé et pâtisseries" },
+        { "text": "Expérience golden hour sur la terrasse" },
+        { "text": "Assistance destination personnalisée", "desc": "Recommandations sur mesure pour explorer Fès, des monuments emblématiques aux souks et expériences culturelles familiales" }
+      ],
+      "conditions": "Cette offre est disponible pendant toute la période de l'Aïd al-Adha, sous réserve de disponibilité. Veuillez noter que la soirée de l'Aïd sera exclusivement disponible pour les réservations du 27 juin.\n\nL'offre ne peut être combinée avec aucune autre promotion. Après soumission du formulaire de réservation, notre équipe vous contactera pour vous fournir plus de détails et finaliser votre séjour."
+    },
+    "direct": {
+      "title": "Réservation Directe",
+      "intro": "Profitez d'un avantage exclusif en réservant directement votre séjour au Riad Alassala Fès. Bénéficiez du meilleur tarif garanti et d'une expérience soigneusement pensée au cœur de la médina de Fès.",
+      "items": [
+        { "text": "Hébergement en chambre ou suite" },
+        { "text": "Petit-déjeuner inclus" },
+        { "text": "Accueil avec thé à la menthe traditionnel et pâtisseries marocaines" },
+        { "text": "Accès à la terrasse panoramique avec vue sur toute la médina de Fès" },
+        { "text": "Une expérience authentique au cœur de Fès" }
+      ],
+      "conditions": "Cette offre exclusive est réservée aux réservations directes effectuées via le site officiel du Riad Alassala Fès ou par contact direct. Elle permet de bénéficier de -15 % sur le tarif flexible pour l'hébergement en chambre ou suite, avec petit-déjeuner inclus, sous réserve de disponibilité.\n\nCette promotion n'est pas cumulable avec d'autres offres et s'applique à certaines catégories de chambres. Elle peut être modifiée ou retirée à tout moment sans préavis. Les conditions de paiement et d'annulation dépendent du tarif sélectionné au moment de la réservation.\nProfitez du meilleur tarif garanti pour votre séjour à Fès en réservant directement."
     }
   },
   "exploringMedina": {
