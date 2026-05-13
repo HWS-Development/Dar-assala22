@@ -128,7 +128,7 @@ const DiscoverOfferPageSection = () => {
                     {detail.discoverHotelCta}
                   </Link>
                   <a
-                    href="https://reservations.riadassala.com"
+                    href="https://riad-alassala-fes.hotelrunner.com/bv3/deals"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex-1 text-center py-2.5 text-sm bg-[#3d3d3d] text-white rounded hover:bg-[#2a2a2a] transition-colors"
@@ -138,7 +138,7 @@ const DiscoverOfferPageSection = () => {
                 </div>
               ) : (
                 <a
-                  href="https://reservations.riadassala.com"
+                  href="https://riad-alassala-fes.hotelrunner.com/bv3/deals"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block w-full text-center py-3 text-sm bg-[#3d3d3d] text-white rounded hover:bg-[#2a2a2a] transition-colors"
