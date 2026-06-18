@@ -69,6 +69,12 @@ const OffersPageSection = () => {
               {featured.title}
             </p>
 
+            {featured.validity && (
+              <p className="mb-5 rounded-full border border-[#cda73c] bg-[#fbf3dd] px-4 py-2 text-center text-[11px] font-semibold uppercase tracking-[0.18em] text-[#7a5a16]">
+                {featured.validity}
+              </p>
+            )}
+
             <ul className="space-y-2 mb-7">
               {featured.items.map((item, i) => (
                 <li key={i} className="flex items-start gap-2 text-sm text-[#444] leading-snug">
@@ -90,7 +96,7 @@ const OffersPageSection = () => {
         </div>
 
         {/* ================= TWO-COLUMN GRID ================= */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div className={`grid grid-cols-1 gap-10 ${cards.length > 1 ? "md:grid-cols-2" : "md:max-w-[390px] md:mx-auto"}`}>
           {cards.map((card) => {
             const offerItem = offersData.cards.find((o) => o.id === card.id);
             return (

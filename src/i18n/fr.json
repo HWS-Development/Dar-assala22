@@ -1116,27 +1116,18 @@
       "description": "Découvrez nos offres exclusives au Riad Alassala Fès et profitez de séjours exceptionnels au cœur de la médina de Fès.\nConçues pour sublimer chaque instant, nos offres répondent à toutes vos envies : escapade romantique, séjour en famille ou moment de détente.\nVivez une hospitalité marocaine authentique alliant confort, charme et sérénité à Fès."
     },
     "featured": {
-      "badge": "Offre du moment",
-      "title": "Une Escapade pour la Fête des Mères à Fès",
-      "link": "mothers-day",
+      "badge": "Offre été",
+      "title": "Échappée Estivale à Fès",
+      "validity": "Édition estivale exclusive, valable jusqu’à fin août",
+      "link": "summer-offer",
       "items": [
-        "Petits-déjeuners Fassis traditionnels",
-        "Dîner spécial Fête des Mères inclus",
-        "Mise en scène élégante avec pétales et bougies"
+        "Hébergement en chambre ou suite confortable",
+        "Petit-déjeuner Fassi authentique",
+        "Dîner marocain sous les étoiles sur la terrasse panoramique"
       ],
       "cta": "Découvrir cette offre"
     },
     "cards": [
-      {
-        "id": "eid-escape",
-        "title": "Escapade Sérénité de l'Aïd al-Adha",
-        "items": [
-          "Hébergement en chambre ou suite",
-          "Petits-déjeuners Fassis traditionnels",
-          "Soirée de l'Aïd avec musique live, thé et pâtisseries"
-        ],
-        "cta": "Découvrir cette offre"
-      },
       {
         "id": "direct-booking",
         "title": "Offre Réservation Directe",
@@ -1157,33 +1148,20 @@
       "riadSubtitle": "Riad Aalassala Fès",
       "riadDescription": "Au cœur de la médina de Fès, le Riad Alassala Fès offre une escapade paisible et authentique. Alliant charme traditionnel, confort élégant et vues panoramiques sur la ville, il incarne l'art de vivre marocain raffiné."
     },
-    "mothersDay": {
-      "title": "Une Escapade pour la Fête des Mères à Fès",
-      "intro": "Célébrez les mères, les épouses et toutes les femmes spéciales de votre vie avec une escapade significative et mémorable. Cette offre a été soigneusement conçue pour transformer un simple geste en une expérience sincère, empreinte de chaleur, d'attention et de précieux moments à partager.",
+    "summer": {
+      "title": "Échappée Estivale à Fès",
+      "intro": "Vivez une échappée estivale authentique à Fès, où tradition, confort et moments sur le rooftop se rencontrent au cœur de la médina.",
+      "validity": "Édition estivale exclusive, valable jusqu’à fin août",
       "items": [
-        { "text": "Hébergement en chambre ou suite" },
-        { "text": "Accueil avec thé marocain et douceurs sucrées" },
-        { "text": "Petits-déjeuners Fassis traditionnels", "desc": "Servis autour de la fontaine dans l'atmosphère paisible du patio" },
-        { "text": "Dîner spécial Fête des Mères, soigneusement préparé pour célébrer cette occasion" },
-        { "text": "Expérience golden hour sur la terrasse panoramique", "desc": "Avec vue sur les toits intemporels de la médina" },
-        { "text": "Mise en scène en chambre", "desc": "Une touche délicate de pétales et de bougies pour créer une atmosphère chaleureuse et intime" },
-        { "text": "Recommandations de découverte de la médina", "desc": "Explorez les ruelles intemporelles, les souks d'artisans et les trésors cachés de Fès grâce à nos recommandations soigneusement sélectionnées." },
-        { "text": "Late check-out (sous réserve de disponibilité)" }
+        { "text": "Hébergement en chambre ou suite confortable" },
+        { "text": "Accueil marocain traditionnel", "desc": "Avec thé à la menthe et douceurs sucrées à l'arrivée" },
+        { "text": "Petit-déjeuner Fassi authentique", "desc": "Servi dans le patio paisible du riad autour de la fontaine ou sur la terrasse rooftop" },
+        { "text": "Expérience coucher de soleil sur le rooftop", "desc": "Avec boissons rafraîchissantes et douceurs marocaines face à la médina de Fès" },
+        { "text": "Dîner marocain sous les étoiles sur la terrasse panoramique", "desc": "Avec vue sur les anciens toits de la médina" },
+        { "text": "Recommandations personnalisées pour découvrir les trésors cachés, les souks traditionnels et les monuments historiques de Fès" },
+        { "text": "Départ tardif (sous réserve de disponibilité)" }
       ],
-      "conditions": "Cette offre est valable du 1er au 31 mai, sous réserve de disponibilité. Le forfait est proposé par nuit pour 2 personnes. Durant cette période, les clients peuvent profiter de cette expérience spéciale dans le cadre d'une célébration à durée limitée.\n\nVeuillez noter que cette offre ne peut être combinée avec aucune autre promotion ou offre spéciale en cours."
-    },
-    "eid": {
-      "title": "Escapade Sérénité de l'Aïd al-Adha",
-      "intro": "Profitez d'une expérience de l'Aïd soigneusement élaborée, où chaque détail est conçu pour allier confort, tradition et moments significatifs au cœur de Fès.",
-      "items": [
-        { "text": "Hébergement en chambre ou suite" },
-        { "text": "Thé de bienvenue marocain traditionnel" },
-        { "text": "Petits-déjeuners Fassis traditionnels inclus", "desc": "Servis chaque matin autour de la fontaine, dans l'atmosphère paisible du patio" },
-        { "text": "Soirée de célébration de l'Aïd – 27 juin", "desc": "Musique marocaine live, thé et pâtisseries" },
-        { "text": "Expérience golden hour sur la terrasse" },
-        { "text": "Assistance destination personnalisée", "desc": "Recommandations sur mesure pour explorer Fès, des monuments emblématiques aux souks et expériences culturelles familiales" }
-      ],
-      "conditions": "Cette offre est disponible pendant toute la période de l'Aïd al-Adha, sous réserve de disponibilité. Veuillez noter que la soirée de l'Aïd sera exclusivement disponible pour les réservations du 27 juin.\n\nL'offre ne peut être combinée avec aucune autre promotion. Après soumission du formulaire de réservation, notre équipe vous contactera pour vous fournir plus de détails et finaliser votre séjour."
+      "conditions": "Cette offre été est valable jusqu’à fin août 2026, sous réserve de disponibilité. Une réservation à l'avance est requise."
     },
     "direct": {
       "title": "Réservation Directe",

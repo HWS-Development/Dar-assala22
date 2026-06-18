@@ -57,6 +57,12 @@ const DiscoverOfferPageSection = () => {
           <p className="text-sm text-[#555] leading-7 max-w-[560px] mx-auto">
             {offer.intro}
           </p>
+
+          {offer.validity && (
+            <p className="mt-6 inline-flex rounded-full border border-[#cda73c] bg-[#fbf3dd] px-5 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#7a5a16]">
+              {offer.validity}
+            </p>
+          )}
         </div>
 
         {/* ================= TWO-COLUMN CONTENT ================= */}
