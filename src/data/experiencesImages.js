@@ -1,3 +1,21 @@
+import cookingMarketOverview from "../../DSC_0454.JPG";
+import cookingMarketBasket from "../../DSC_0486.JPG";
+import cookingMarketSelection from "../../DSC_0493.JPG";
+import cookingOnionPrep from "../../DSC_0544.JPG";
+import cookingGroupPrep from "../../DSC_0580.JPG";
+import cookingOnionCutting from "../../DSC_0584.JPG";
+import cookingSpicePrep from "../../DSC_0608.JPG";
+import cookingTomatoPrep from "../../DSC_0700.JPG";
+import cookingOilPour from "../../DSC_0747.JPG";
+import cookingStoveOil from "../../DSC_0770.JPG";
+import cookingTeaPrep from "../../DSC_0777.JPG";
+import cookingTableSeated from "../../DSC_0803.JPG";
+import cookingDiningPortrait from "../../DSC_0809.JPG";
+import cookingTeaTable from "../../DSC_0811.JPG";
+import cookingDiningOverview from "../../DSC_0819.JPG";
+import cookingDishTasting from "../../DSC_0853.JPG";
+import cookingTastingPortrait from "../../DSC_0856.JPG";
+
 const experiencesImages = {
   cooking: {
     "cooking-main":
@@ -8,6 +26,26 @@ const experiencesImages = {
 
     tea:
       "https://nvskwcjdrrrcpyiadoxy.supabase.co/storage/v1/object/public/Riad%20Al%20Assala%20Fes/Images%20of%20the%20pages/Experiences/cooking/riad%20alassala%20fes%20-%20moroccan%20tea%20and%20sweeties%201.jpg",
+
+    gallery: [
+      cookingMarketOverview,
+      cookingMarketBasket,
+      cookingMarketSelection,
+      cookingGroupPrep,
+      cookingTomatoPrep,
+      cookingOnionPrep,
+      cookingOnionCutting,
+      cookingSpicePrep,
+      cookingOilPour,
+      cookingStoveOil,
+      cookingTeaPrep,
+      cookingDiningOverview,
+      cookingTableSeated,
+      cookingDiningPortrait,
+      cookingTeaTable,
+      cookingDishTasting,
+      cookingTastingPortrait,
+    ],
   },
 
   zellige: {
